@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623201316) do
+ActiveRecord::Schema.define(version: 20150623202340) do
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name"
@@ -25,11 +25,32 @@ ActiveRecord::Schema.define(version: 20150623201316) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "start_daettime"
+    t.datetime "end_datetime"
+    t.string   "cost"
+    t.integer  "reoccur"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "majors", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "managers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "department_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "managers", ["department_id"], name: "index_managers_on_department_id"
+  add_index "managers", ["user_id"], name: "index_managers_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -47,5 +68,11 @@ ActiveRecord::Schema.define(version: 20150623201316) do
   add_index "users", ["college_id"], name: "index_users_on_college_id"
   add_index "users", ["department_id"], name: "index_users_on_department_id"
   add_index "users", ["major_id"], name: "index_users_on_major_id"
+
+  create_table "years", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
