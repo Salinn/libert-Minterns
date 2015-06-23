@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photo challenge:</strong>
+  <%= @winning_photo.photo_challenge %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @winning_photo.reason %>
+</p>
+
+<%= link_to 'Edit', edit_winning_photo_path(@winning_photo) %> |
+<%= link_to 'Back', winning_photos_path %>
