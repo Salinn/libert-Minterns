@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   resources :winning_photos
   resources :galleries
   resources :photo_challenges
