@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo_challenge.title %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @photo_challenge.theme %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @photo_challenge.year %>
+</p>
+
+<%= link_to 'Edit', edit_photo_challenge_path(@photo_challenge) %> |
+<%= link_to 'Back', photo_challenges_path %>
