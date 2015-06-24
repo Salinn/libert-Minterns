@@ -21,6 +21,10 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
+#Settings Config gem
+#Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
+gem "rails_config"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -43,5 +47,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  #Useful for debugging
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
