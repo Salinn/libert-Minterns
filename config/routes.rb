@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  resources :intern_summaries
+  resources :answers
+  resources :faqs
+  resources :comments
+  resources :questions
+  resources :ratings
+  resources :faq_sections
+  resources :event_dates
+  resources :photos
+  resources :winning_photos
+  resources :galleries
+  resources :photo_challenges
+  resources :years
+  resources :events
+  resources :managers
+  resources :users
+  resources :colleges
+  resources :departments
+  resources :majors
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @photo.picture %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @photo.comment %>
+</p>
+
+<p>
+  <strong>Gallery:</strong>
+  <%= @photo.gallery %>
+</p>
+
+<p>
+  <strong>Photo challenge:</strong>
+  <%= @photo.photo_challenge %>
+</p>
+
+<p>
+  <strong>Winning photo:</strong>
+  <%= @photo.winning_photo %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

@@ -1,0 +1,2 @@
+module WinningPhotosHelper
+end
