@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623203440) do
+ActiveRecord::Schema.define(version: 20150624143743) do
+
+  create_table "answers", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "rating_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+  add_index "answers", ["rating_id"], name: "index_answers_on_rating_id"
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id"
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name"
@@ -19,11 +32,32 @@ ActiveRecord::Schema.define(version: 20150623203440) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
   create_table "departments", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "event_dates", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "event_dates", ["event_id"], name: "index_event_dates_on_event_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +70,26 @@ ActiveRecord::Schema.define(version: 20150623203440) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "faq_sections", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.integer  "rating_id"
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.integer  "faq_section_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "faqs", ["faq_section_id"], name: "index_faqs_on_faq_section_id"
+  add_index "faqs", ["question_id"], name: "index_faqs_on_question_id"
+  add_index "faqs", ["rating_id"], name: "index_faqs_on_rating_id"
+  add_index "faqs", ["user_id"], name: "index_faqs_on_user_id"
+
   create_table "galleries", force: :cascade do |t|
     t.string   "name"
     t.integer  "event_id"
@@ -46,6 +100,16 @@ ActiveRecord::Schema.define(version: 20150623203440) do
 
   add_index "galleries", ["event_id"], name: "index_galleries_on_event_id"
   add_index "galleries", ["photo_challenge_id"], name: "index_galleries_on_photo_challenge_id"
+
+  create_table "intern_summaries", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "intern_summaries", ["user_id"], name: "index_intern_summaries_on_user_id"
 
   create_table "majors", force: :cascade do |t|
     t.string   "name"
@@ -86,6 +150,26 @@ ActiveRecord::Schema.define(version: 20150623203440) do
   add_index "photos", ["gallery_id"], name: "index_photos_on_gallery_id"
   add_index "photos", ["photo_challenge_id"], name: "index_photos_on_photo_challenge_id"
   add_index "photos", ["winning_photo_id"], name: "index_photos_on_winning_photo_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "faq_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questions", ["faq_id"], name: "index_questions_on_faq_id"
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "up_votes"
+    t.integer  "down_votes"
+    t.integer  "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
