@@ -48,5 +48,5 @@ users = [
     password_confirmation: 'topsecret'
   }
 ]
-
+User.delete_all
 User.create!(users)
