@@ -1,0 +1,2 @@
+module InternSummariesHelper
+end

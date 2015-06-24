@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :intern_summaries
   resources :answers
   resources :faqs
   resources :comments
