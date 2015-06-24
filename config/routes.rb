@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :questions
   resources :ratings
   resources :faq_sections
   resources :event_dates
