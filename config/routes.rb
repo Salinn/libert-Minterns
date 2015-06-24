@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
   resources :intern_summaries
   resources :answers
   resources :faqs
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
   resources :years
   resources :events
   resources :managers
-  resources :users
   resources :colleges
   resources :departments
   resources :majors
