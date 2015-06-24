@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @faq.rating %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @faq.question %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @faq.user %>
+</p>
+
+<p>
+  <strong>Faq section:</strong>
+  <%= @faq.faq_section %>
+</p>
+
+<%= link_to 'Edit', edit_faq_path(@faq) %> |
+<%= link_to 'Back', faqs_path %>
