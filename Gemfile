@@ -21,6 +21,10 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
+#Security gems 
+gem 'cancancan'
+gem 'rolify'
+
 #Settings Config gem
 #Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
 gem "rails_config"
