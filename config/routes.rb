@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :event_dates
   resources :photos
   resources :winning_photos
   resources :galleries
