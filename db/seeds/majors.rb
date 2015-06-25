@@ -25,7 +25,7 @@ majors = [
   },
   {
     name: 'Computing Security'  
-  },
+  }
 ]
 Major.delete_all
 Major.create!(majors)
