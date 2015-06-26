@@ -1,0 +1,12 @@
+<% if @photo_challenge %>
+  <%= @photo_challenge.title %>
+  <% if @photo_challenge.photos.any? %>
+    <% @photo_challenge.photos.each do |photo| %>
+      <%= link_to image_tag(photo.picture_url), photo_path(photo.id) %>
+    <% end %>
+  <% else %>
+    <h5>No images available</h5>
+  <% end %>
+<% else %>
+  <h5>No photo challenges were found</h5>
+<% end %>

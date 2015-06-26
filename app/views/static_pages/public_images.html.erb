@@ -4,15 +4,16 @@
 <% if @photo_challenge %>
   <%= @photo_challenge.title %>
   <% if @photo_challenge.photos.any? %>
-    <% @photo_challenge.photos.each do |photo| %>
+    <% @photo_challenge.photos[0...5].each do |photo| %>
       <%= image_tag(photo.picture_url) %>
     <% end %>
   <% else %>
     <h5>No images available</h5>
   <% end %>
 <% else %>
-  <h5>No events were found</h5>
+  <h5>No photo challenges were found</h5>
 <% end %>
+<%= link_to 'See More Photo Challenges', photo_challenges_path %>
 
 
 
@@ -20,7 +21,7 @@
 <% if @event %>
   <%= @event.name %>
   <% if @event.gallery && @event.gallery.photos.any? %>
-    <% @event.gallery.photos.each do |photo| %>
+    <% @event.gallery.photos[0...5].each do |photo| %>
       <%= image_tag(photo.picture_url) %>
     <% end %>
   <% else %>
@@ -29,7 +30,7 @@
 <% else %>
   <h5>No events were found</h5>
 <% end %>
-
+<%= link_to 'See More Events', show_event_photos_path %>
 
 
 <h3>Office</h3>
