@@ -25,6 +25,11 @@ gem 'omniauth-google-oauth2'
 gem 'cancancan'
 gem 'rolify'
 
+#Images for storing Images
+gem 'fog'
+gem "mini_magick"
+gem 'carrierwave'
+
 #Settings Config gem
 #Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
 gem "rails_config"

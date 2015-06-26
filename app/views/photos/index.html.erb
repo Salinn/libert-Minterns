@@ -17,7 +17,7 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.picture %></td>
+        <td><%= image_tag(photo.picture_url) %></td>
         <td><%= photo.comment %></td>
         <td><%= photo.gallery %></td>
         <td><%= photo.photo_challenge %></td>
