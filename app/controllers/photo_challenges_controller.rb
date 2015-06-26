@@ -4,12 +4,16 @@ class PhotoChallengesController < ApplicationController
   # GET /photo_challenges
   # GET /photo_challenges.json
   def index
-    @photo_challenges = PhotoChallenge.all
+    @photo_challenges = PhotoChallenge.all.reverse
   end
 
   # GET /photo_challenges/1
   # GET /photo_challenges/1.json
   def show
+  end
+  
+  def photo_challenge_gallery
+    @photo_challenge = PhotoChallenge.find(params[:photo_challenge_id])
   end
 
   # GET /photo_challenges/new

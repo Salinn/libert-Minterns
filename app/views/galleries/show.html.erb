@@ -1,19 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @gallery.name %>
-</p>
-
-<p>
-  <strong>Event:</strong>
-  <%= @gallery.event %>
-</p>
-
-<p>
-  <strong>Photo challenge:</strong>
-  <%= @gallery.photo_challenge %>
-</p>
-
-<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
-<%= link_to 'Back', galleries_path %>
+<% if @gallery && @gallery.event.name && @gallery.photos.any? %>
+  <%= @gallery.event.name %>
+  <% @gallery.photos.each do |photo| %>
+    <%= link_to image_tag(photo.picture_url), photo_path(photo.id) %>
+  <% end %>
+<% else %>
+  <h5>No images available</h5>
+<% end %>

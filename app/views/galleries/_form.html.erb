@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :event_id %><br>
-    <%= f.text_field :event_id %>
+    <%= f.collection_select :event_id, @events.reverse, :id, :name, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :photo_challenge_id %><br>
-    <%= f.text_field :photo_challenge_id %>
+    <%= f.collection_select :photo_challenge_id, @photo_challenges.reverse, :id, :title, :include_blank => true%>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -11,6 +11,10 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
   end
+  
+  def show_event_photos
+    @events = Event.all.reverse
+  end
 
   # GET /events/new
   def new

@@ -1,4 +1,4 @@
-<%= form_for(@photo) do |f| %>
+<%= form_for @photo, :html => {:multipart => true} do |f| %>
   <% if @photo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
+    <%= f.file_field :picture, placeholder: 'Image File' %>
+    <%= f.text_field :remote_picture_url, placeholder: 'Or input url of photo' %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
@@ -21,15 +22,15 @@
   </div>
   <div class="field">
     <%= f.label :gallery_id %><br>
-    <%= f.text_field :gallery_id %>
+    <%= f.collection_select :gallery_id, @galleries.reverse, :id, :name, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :photo_challenge_id %><br>
-    <%= f.text_field :photo_challenge_id %>
+    <%= f.collection_select :photo_challenge_id, @photo_challenges.reverse, :id, :title, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :winning_photo_id %><br>
-    <%= f.text_field :winning_photo_id %>
+    <%= f.collection_select :winning_photo_id, @winning_photos.reverse, :id, :reason, :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

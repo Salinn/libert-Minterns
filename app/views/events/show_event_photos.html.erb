@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<% @events.each do |event| %>
+  <a href="#<%= event.id %>"><%= event.name %></a>
+<% end %>
+
+<% if @events.any? %>
+  <% @events.each do |event| %>
+    <div id="<%= event.id %>">
+      <%= event.name %>
+      <% if event.gallery && event.gallery.photos.any? %>
+        <% event.gallery.photos[0...5].each do |event| %>
+          <%= image_tag(event.picture_url) %>
+        <% end %>
+        <%= link_to "See More photos from #{event.name}", gallery_path(event.gallery.id) %>
+      <% else %>
+        <h5>No images available</h5>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <h5>No Photo Challenges found</h5>
+<% end %>
+
