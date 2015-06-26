@@ -1,1 +1,36 @@
 <h1>All of those images</h1>
+
+<h3>Photo of the week</h3>
+<% if @photo_challenge %>
+  <%= @photo_challenge.title %>
+  <% if @photo_challenge.photos.any? %>
+    <% @photo_challenge.photos.each do |photo| %>
+      <%= image_tag(photo.picture_url) %>
+    <% end %>
+  <% else %>
+    <h5>No images available</h5>
+  <% end %>
+<% else %>
+  <h5>No events were found</h5>
+<% end %>
+
+
+
+<h3>Events</h3>
+<% if @event %>
+  <%= @event.name %>
+  <% if @event.gallery && @event.gallery.photos.any? %>
+    <% @event.gallery.photos.each do |photo| %>
+      <%= image_tag(photo.picture_url) %>
+    <% end %>
+  <% else %>
+    <h5>No images available</h5>
+  <% end %>
+<% else %>
+  <h5>No events were found</h5>
+<% end %>
+
+
+
+<h3>Office</h3>
+<!-- Need to add images for this -->

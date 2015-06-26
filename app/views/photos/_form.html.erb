@@ -22,15 +22,15 @@
   </div>
   <div class="field">
     <%= f.label :gallery_id %><br>
-    <%= f.text_field :gallery_id %>
+    <%= f.collection_select :gallery_id, @galleries.reverse, :id, :name, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :photo_challenge_id %><br>
-    <%= f.text_field :photo_challenge_id %>
+    <%= f.collection_select :photo_challenge_id, @photo_challenges.reverse, :id, :title, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :winning_photo_id %><br>
-    <%= f.text_field :winning_photo_id %>
+    <%= f.collection_select :winning_photo_id, @winning_photos.reverse, :id, :reason, :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

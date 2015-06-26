@@ -15,10 +15,16 @@ class PhotosController < ApplicationController
   # GET /photos/new
   def new
     @photo = Photo.new
+    @galleries = Gallery.all
+    @photo_challenges = PhotoChallenge.all
+    @winning_photos = WinningPhoto.all
   end
 
   # GET /photos/1/edit
   def edit
+    @galleries = Gallery.all
+    @photo_challenges = PhotoChallenge.all
+    @winning_photos = WinningPhoto.all
   end
 
   # POST /photos
