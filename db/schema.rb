@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624195028) do
+ActiveRecord::Schema.define(version: 20150629141253) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content"
@@ -77,18 +77,12 @@ ActiveRecord::Schema.define(version: 20150624195028) do
   end
 
   create_table "faqs", force: :cascade do |t|
-    t.integer  "rating_id"
-    t.integer  "question_id"
-    t.integer  "user_id"
     t.integer  "faq_section_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
   add_index "faqs", ["faq_section_id"], name: "index_faqs_on_faq_section_id"
-  add_index "faqs", ["question_id"], name: "index_faqs_on_question_id"
-  add_index "faqs", ["rating_id"], name: "index_faqs_on_rating_id"
-  add_index "faqs", ["user_id"], name: "index_faqs_on_user_id"
 
   create_table "galleries", force: :cascade do |t|
     t.string   "name"
@@ -169,7 +163,10 @@ ActiveRecord::Schema.define(version: 20150624195028) do
     t.integer  "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "faqs_id"
   end
+
+  add_index "ratings", ["faqs_id"], name: "index_ratings_on_faqs_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

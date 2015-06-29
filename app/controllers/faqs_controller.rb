@@ -15,6 +15,8 @@ class FaqsController < ApplicationController
   # GET /faqs/new
   def new
     @faq = Faq.new
+    @faq.question.build
+    @faq.rating.cre
   end
 
   # GET /faqs/1/edit
@@ -69,6 +71,7 @@ class FaqsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faq_params
-      params.require(:faq).permit(:rating_id, :question_id, :user_id, :faq_section_id)
+      params.require(:faq).permit(:rating_id, :question_id, :user_id, :faq_section_id,
+                                  questions_attributes: [:title, :content, :user_id])
     end
 end

@@ -1,6 +1,9 @@
 class Faq < ActiveRecord::Base
-  belongs_to :rating
-  belongs_to :question
-  belongs_to :user
+  has_one :ratings
+  has_one :questions
+  has_many :users
+  
   belongs_to :faq_section
+  
+  accepts_nested_attributes_for :questions
 end

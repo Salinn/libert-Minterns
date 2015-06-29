@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Intern Summaries</h1>
+<% @intern_summaries.each do |intern_summary| %>
+  <h3><%= intern_summary.title %></h3>
+  <p><%= intern_summary.content %></p>
+  <p>Written by: <%= intern_summary.user %></p> <!-- Not sure why this isn't showing up -->
+  <hr>
+<% end %>
+
+<br>
+
+<%= link_to 'New Intern summary', new_intern_summary_path %>

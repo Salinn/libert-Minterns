@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-   get 'show_event_photos', to: 'events#show_event_photos', as: :show_event_photos
+  get 'show_event_photos', to: 'events#show_event_photos', as: :show_event_photos
   get 'event_photos/:event_id' => 'events#event_photos', as: 'event_photos'
   get 'photo_challenge_gallery/:photo_challenge_id' => 'photo_challenges#photo_challenge_gallery', as: :photo_challenge_gallery
   
