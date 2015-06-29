@@ -30,6 +30,9 @@ gem 'fog'
 gem "mini_magick"
 gem 'carrierwave'
 
+#Allows tag creation and associatios to be created
+gem 'acts-as-taggable-on'
+
 #Settings Config gem
 #Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
 gem "rails_config"

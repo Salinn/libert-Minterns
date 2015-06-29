@@ -4,7 +4,9 @@
 <% @intern_summaries.each do |intern_summary| %>
   <h3><%= intern_summary.title %></h3>
   <p><%= intern_summary.content %></p>
-  <p>Written by: <%= intern_summary.user.email %></p> <!-- Not sure why this isn't showing up -->
+  <p>Written by: <%= intern_summary.user.email %></p>
+  
+  <p>Tags: <%= get_tag_links(intern_summary) %></p>
   <hr>
 <% end %>
 
