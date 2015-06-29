@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629141253) do
+ActiveRecord::Schema.define(version: 20150629182256) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content"
@@ -215,6 +215,17 @@ ActiveRecord::Schema.define(version: 20150629141253) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "vote_trackers", force: :cascade do |t|
+    t.integer  "rating_id"
+    t.integer  "user_id"
+    t.string   "vote_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "vote_trackers", ["rating_id"], name: "index_vote_trackers_on_rating_id"
+  add_index "vote_trackers", ["user_id"], name: "index_vote_trackers_on_user_id"
 
   create_table "winning_photos", force: :cascade do |t|
     t.integer  "photo_challenge_id"

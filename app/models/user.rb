@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          
   has_one :intern_summary
+  
+  has_many :vote_trakers, dependent: :destroy
+  has_many :ratings, through: :vote_trakers
          
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info

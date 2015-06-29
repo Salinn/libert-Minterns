@@ -1,5 +1,8 @@
 class Rating < ActiveRecord::Base
   belongs_to :faq
+  
+  has_many :vote_trakers, dependent: :destroy
+  has_many :users, through: :vote_trakers
   before_validation :set_total
   before_validation :set_up_votes
   before_validation :set_down_votes
