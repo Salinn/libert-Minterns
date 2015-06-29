@@ -1,5 +1,6 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
+  before_action :set_faq_for_vote, only: [:upvote, :downvote]
 
   # GET /faqs
   # GET /faqs.json
@@ -15,8 +16,6 @@ class FaqsController < ApplicationController
   # GET /faqs/new
   def new
     @faq = Faq.new
-    @faq.question.build
-    @faq.rating.cre
   end
 
   # GET /faqs/1/edit
@@ -62,11 +61,31 @@ class FaqsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def upvote
+    rating = @faq.ratings.first
+    up_vote = (rating.up_votes + 1)
+    rating.update(up_votes: up_vote, total: (up_vote - rating.down_votes))
+    redirect_to :back, notice: 'Thanks for voting'
+  end
+  
+  def downvote
+    rating = @faq.ratings.first
+    unless rating.total == 0
+      down_vote = (rating.down_votes + 1)
+      rating.update(down_votes: down_vote, total: (rating.up_votes - down_vote))
+      redirect_to :back, notice: 'Thanks for voting'
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_faq
       @faq = Faq.find(params[:id])
+    end
+    
+    def set_faq_for_vote
+      @faq = Faq.find(params[:faq_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

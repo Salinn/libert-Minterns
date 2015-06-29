@@ -163,10 +163,10 @@ ActiveRecord::Schema.define(version: 20150629141253) do
     t.integer  "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "faqs_id"
+    t.integer  "faq_id"
   end
 
-  add_index "ratings", ["faqs_id"], name: "index_ratings_on_faqs_id"
+  add_index "ratings", ["faq_id"], name: "index_ratings_on_faq_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
