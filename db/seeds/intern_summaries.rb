@@ -1,7 +1,7 @@
 intern_summaries = [
   {
-    title: 'My Summer Internship at Liberty',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fermentum, ligula eu dapibus eleifend, ligula nunc consequat ipsum, vitae dapibus diam augue vel justo. Sed sagittis urna quis justo luctus, ut aliquet nibh mollis. Pellentesque commodo, nibh quis ultricies placerat, libero lorem tincidunt justo, vel fringilla felis risus eget sem. Donec fringilla libero finibus leo cursus venenatis sed at neque. Mauris lacinia hendrerit felis non luctus. Nunc viverra metus convallis tellus ullamcorper dictum sed at quam. Praesent laoreet augue quis tincidunt consectetur. Praesent porttitor tellus vitae ante elementum, in molestie diam porttitor.',
+    title: 'My work in the unicorn dept.',
+    content: 'While rare, some interns may earn the right/privelege to work in Liberty Mutual's wold-class Unicorn department. Here, we work to catch, care for, and protect the remnants of the world Unicorn population (which has dwindled to an estimated 1,000 in the last hundred years or so). The best part of my day is stablework, I really love being close to the animals both on a physical level and on a networking level. I've had some great reviews written for me not only by my manager, but my favorite Unicorn, Fabio. He really played up my interpesonal skills, as well as my abilities in the Microsoft Office Suite. Can't say enough good things about this company and department.',
     user_id: 1
   },
   {
