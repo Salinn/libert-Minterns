@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629185548) do
+ActiveRecord::Schema.define(version: 20150630140512) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150629185548) do
     t.integer  "reoccur"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.text     "description"
   end
 
   create_table "faq_sections", force: :cascade do |t|

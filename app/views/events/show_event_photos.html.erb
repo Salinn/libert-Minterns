@@ -8,6 +8,7 @@
   <% @events.each do |event| %>
     <div id="<%= event.id %>">
       <%= event.name %>
+      <%= event.description %>
       <% if event.gallery && event.gallery.photos.any? %>
         <% event.gallery.photos[0...5].each do |event| %>
           <%= image_tag(event.picture_url) %>
