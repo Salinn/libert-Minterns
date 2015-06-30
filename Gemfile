@@ -33,6 +33,10 @@ gem 'carrierwave'
 #Allows tag creation and associatios to be created
 gem 'acts-as-taggable-on'
 
+#Basic searching
+#gem 'chosen-rails'
+#gem "select2-rails"
+
 #Settings Config gem
 #Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
 gem "rails_config"

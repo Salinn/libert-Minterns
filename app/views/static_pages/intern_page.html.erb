@@ -1,9 +1,15 @@
-<%= link_to 'Past Intern Expeirence', intern_summaries_path  %>
-<%= link_to 'FAQ about our programs', faqs_path %>
-<%= link_to 'Ask a question', new_question_path %>
+<%= link_to 'Past Intern Expeirence', '#Summaries', :onclick => "document.getElementById('intern-summaries').style.display=''; document.getElementById('q-and-a').style.display='none'; document.getElementById('ask-a-question').style.display='none'" %>
+<%= link_to 'FAQ about our programs', '#FAQ', :onclick => "document.getElementById('intern-summaries').style.display='none'; document.getElementById('q-and-a').style.display=''; document.getElementById('ask-a-question').style.display='none'" %>
+<%= link_to 'Ask a question', '#AskAQuestion', :onclick => "document.getElementById('intern-summaries').style.display='none'; document.getElementById('q-and-a').style.display='none'; document.getElementById('ask-a-question').style.display=''"  %>
 
-<%= render 'intern_summaries/show_intern_summaries' %>
-
-<%= render 'faqs/question_and_answers' %>
-
-<%= render 'faqs/ask_question' %>
+<div id='master-div'>
+  <div id='intern-summaries'>
+    <%= render 'intern_summaries/show_intern_summaries' %>
+  </div>
+  <div id='q-and-a' style='display: none'>
+    <%= render 'faqs/question_and_answers' %>
+  </div>
+  <div id='ask-a-question' style='display: none'>
+    <%= render 'faqs/ask_question' %>
+  </div>
+</div>
