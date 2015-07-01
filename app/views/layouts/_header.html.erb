@@ -1,11 +1,10 @@
 <%= link_to 'Home', root_path %>
-<%= link_to 'Img Screen', public_images_path %>
-<%= link_to 'Intern', '/intern_page#Summaries' %>
+
 <% if user_signed_in? %>
   Signed in as <%= current_user.first_name %>. Not you?
   <%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path %> or
+  <%= link_to 'Img Screen', public_images_path %>
+  <%= link_to 'Intern', '/intern_page#Summaries' %>
   <%= link_to "Sign in", new_user_session_path %>
-  <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
 <% end %>
