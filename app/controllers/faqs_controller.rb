@@ -64,23 +64,23 @@ class FaqsController < ApplicationController
   
   def upvote
     if @vote_tracker.vote_type == 'up'
-      redirect_to :back, notice: 'Sorry, you have already up voted this question'
+      redirect_to '/intern_page#FAQ', notice: 'Sorry, you have already up voted this question'
     else
       up_vote = (@rating.up_votes + 1)
       @rating.update(up_votes: up_vote, total: (up_vote - @rating.down_votes))
       @vote_tracker.update(vote_type: 'up')
-      redirect_to :back, notice: 'Thanks for voting'
+      redirect_to '/intern_page#FAQ', notice: 'Thanks for voting'
     end
   end
   
   def downvote
     if @rating.total == 0 or @vote_tracker.vote_type == 'down'
-      redirect_to :back, notice: 'Sorry, you have already down voted this question'
+      redirect_to '/intern_page#FAQ', notice: 'Sorry, you have already down voted this question'
     else
       down_vote = (@rating.down_votes + 1)
       @rating.update(down_votes: down_vote, total: (@rating.up_votes - down_vote))
       @vote_tracker.update(vote_type: 'down')
-      redirect_to :back, notice: 'Thanks for voting'
+      redirect_to '/intern_page#FAQ', notice: 'Thanks for voting'
     end
   end
 

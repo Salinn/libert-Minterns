@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
   end
   
   def intern_page
-    @intern_summaries = InternSummary.all
+    @intern_summaries = InternSummary.paginate(:page => params[:page], :per_page => 3)
     @faq = Faq.new
     @faq.questions.build
     @faq_sections = FaqSection.all

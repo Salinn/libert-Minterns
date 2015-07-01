@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   
   resources :intern_summaries
-  resources :answers
+  resources :answers do
+    post 'upvote'
+    post 'downvote'
+  end
   resources :faqs do
     post 'upvote'
     post 'downvote'
