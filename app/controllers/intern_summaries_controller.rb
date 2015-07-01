@@ -4,7 +4,11 @@ class InternSummariesController < ApplicationController
   # GET /intern_summaries
   # GET /intern_summaries.json
   def index
-    @intern_summaries = InternSummary.all
+    if params[:tag]
+      @intern_summaries = InternSummary.tagged_with(params[:tag])
+    else
+      @intern_summaries = InternSummary.all
+    end
   end
 
   # GET /intern_summaries/1
@@ -69,6 +73,6 @@ class InternSummariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def intern_summary_params
-      params.require(:intern_summary).permit(:title, :content, :content, :user_id)
+      params.require(:intern_summary).permit(:title, :content, :content, :user_id, :tag_list)
     end
 end

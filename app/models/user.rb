@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          
+  has_one :intern_summary
+  
+  has_many :vote_trakers, dependent: :destroy
+  has_many :ratings, through: :vote_trakers
+         
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
     user = User.where(:provider => access_token.provider, :uid => access_token.uid ).first

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624195028) do
+ActiveRecord::Schema.define(version: 20150630140512) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150624195028) do
     t.integer  "reoccur"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.text     "description"
   end
 
   create_table "faq_sections", force: :cascade do |t|
@@ -77,18 +78,12 @@ ActiveRecord::Schema.define(version: 20150624195028) do
   end
 
   create_table "faqs", force: :cascade do |t|
-    t.integer  "rating_id"
-    t.integer  "question_id"
-    t.integer  "user_id"
     t.integer  "faq_section_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
   add_index "faqs", ["faq_section_id"], name: "index_faqs_on_faq_section_id"
-  add_index "faqs", ["question_id"], name: "index_faqs_on_question_id"
-  add_index "faqs", ["rating_id"], name: "index_faqs_on_rating_id"
-  add_index "faqs", ["user_id"], name: "index_faqs_on_user_id"
 
   create_table "galleries", force: :cascade do |t|
     t.string   "name"
@@ -169,7 +164,10 @@ ActiveRecord::Schema.define(version: 20150624195028) do
     t.integer  "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "faq_id"
   end
+
+  add_index "ratings", ["faq_id"], name: "index_ratings_on_faq_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -181,6 +179,26 @@ ActiveRecord::Schema.define(version: 20150624195028) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -218,6 +236,17 @@ ActiveRecord::Schema.define(version: 20150624195028) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "vote_trackers", force: :cascade do |t|
+    t.integer  "rating_id"
+    t.integer  "user_id"
+    t.string   "vote_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "vote_trackers", ["rating_id"], name: "index_vote_trackers_on_rating_id"
+  add_index "vote_trackers", ["user_id"], name: "index_vote_trackers_on_user_id"
 
   create_table "winning_photos", force: :cascade do |t|
     t.integer  "photo_challenge_id"

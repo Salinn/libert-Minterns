@@ -1,5 +1,6 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
+  before_action :set_faq_for_vote, only: [:upvote, :downvote]
 
   # GET /faqs
   # GET /faqs.json
@@ -60,15 +61,44 @@ class FaqsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def upvote
+    if @vote_tracker.vote_type == 'up'
+      redirect_to '/intern_page#FAQ', notice: 'Sorry, you have already up voted this question'
+    else
+      up_vote = (@rating.up_votes + 1)
+      @rating.update(up_votes: up_vote, total: (up_vote - @rating.down_votes))
+      @vote_tracker.update(vote_type: 'up')
+      redirect_to '/intern_page#FAQ', notice: 'Thanks for voting'
+    end
+  end
+  
+  def downvote
+    if @rating.total == 0 or @vote_tracker.vote_type == 'down'
+      redirect_to '/intern_page#FAQ', notice: 'Sorry, you have already down voted this question'
+    else
+      down_vote = (@rating.down_votes + 1)
+      @rating.update(down_votes: down_vote, total: (@rating.up_votes - down_vote))
+      @vote_tracker.update(vote_type: 'down')
+      redirect_to '/intern_page#FAQ', notice: 'Thanks for voting'
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_faq
       @faq = Faq.find(params[:id])
     end
+    
+    def set_faq_for_vote
+      @faq = Faq.find(params[:faq_id])
+      @rating = @faq.ratings.first
+      @vote_tracker = VoteTracker.find_or_create_by(user: current_user, rating: @rating)
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faq_params
-      params.require(:faq).permit(:rating_id, :question_id, :user_id, :faq_section_id)
+      params.require(:faq).permit(:rating_id, :question_id, :user_id, :faq_section_id,
+                                  questions_attributes: [:title, :content, :user_id])
     end
 end

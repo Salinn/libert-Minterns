@@ -30,6 +30,16 @@ gem 'fog'
 gem "mini_magick"
 gem 'carrierwave'
 
+#Allows tag creation and associatios to be created
+gem 'acts-as-taggable-on'
+
+#Allows information to be split into a few pages (pagination)
+gem 'will_paginate'
+
+#Basic searching
+#gem 'chosen-rails'
+#gem "select2-rails"
+
 #Settings Config gem
 #Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
 gem "rails_config"

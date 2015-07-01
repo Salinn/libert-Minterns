@@ -9,8 +9,5 @@
   <p>Tags: <%= get_tag_links(intern_summary) %></p>
   <hr>
 <% end %>
+<%= will_paginate @intern_summaries %>
 
-<br>
-
-<!-- Add a if statement to check if they have permissions to create a summary -->
-<%= link_to 'New Intern summary', new_intern_summary_path %>

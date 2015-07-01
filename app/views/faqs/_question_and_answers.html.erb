@@ -1,0 +1,28 @@
+
+<h1>FAQ Section</h1>
+<% @faq_sections.each_with_index do |faq_section, index| %>
+  <h1><%= faq_section.name %></h1>
+  <% faq_section.faqs.each do |faq| %>
+  <hr>
+  <h2>Question: </h2>
+    <h5>Total: <%= faq.ratings.first.total %></h5>
+    <h5>Up votes: <%= faq.ratings.first.up_votes %></h5>
+    <h5>Down votes: <%= faq.ratings.first.down_votes %></h5>
+    <%= button_to '+1', faq_upvote_path(faq), method: :post %>
+    <%= button_to '-1', faq_downvote_path(faq), method: :post %>
+    <h5><%= faq.questions.first.title %></h5>
+    <p><%= faq.questions.first.content %></p>
+    <br>
+  <h2>Answers: </h2>
+    <% faq.questions.first.answers.each do |answer| %>
+    <h5>Total: <%= answer.rating.total %></h5>
+    <h5>Up votes: <%= answer.rating.up_votes %></h5>
+    <h5>Down votes: <%= answer.rating.down_votes %></h5>
+      <%= button_to '+1', faq_upvote_path(answer), method: :post %>
+      <%= button_to '-1', faq_downvote_path(answer), method: :post %>
+      <p><%= answer.content %></p>
+      <p>Written by: <%= answer.user.first_name %> <%= answer.user.last_name %></p>
+    <% end %>
+    <hr>
+  <% end %>
+<% end %>
