@@ -8,16 +8,24 @@ galleries = [
     event_id: 2
   },
   {
+    name: 'Intern pick up volleyball',  
+    event_id: 3
+  },
+  {
+    name: 'Red Sox Gamey',  
+    event_id: 4
+  },
+  {
     name: 'Week 1',  
-    photo_challenge_id: 1 
+    photo_challenge_id: 6
   },
   {
     name: 'Week 2',  
-    photo_challenge_id: 2
+    photo_challenge_id: 7
   },
   {
     name: 'Week 3',  
-    photo_challenge_id: 3
+    photo_challenge_id: 8
   }
 ]
 Gallery.delete_all
