@@ -4,9 +4,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
-    @events_by_date = @events.group_by(&:start_date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    
+    @events = Event.where(start_date: @date.beginning_of_month..@date.end_of_month)
+    @events_by_date = @events.group_by(&:start_date)
   end
 
   # GET /events/1
