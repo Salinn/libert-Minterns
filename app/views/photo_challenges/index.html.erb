@@ -12,8 +12,13 @@
     <div id="<%= photo_challenge.id %>">
       <%= photo_challenge.title %>
       <% if photo_challenge.photos.any? %>
-        <%= image_tag(photo_challenge.picture_url) %>
+        <hr>
+        <% if photo_challenge.winning_photo  %>
+          <%= image_tag(photo_challenge.winning_photo.photo.picture_url) %>
+        <% end %>
+        <hr>
         <% photo_challenge.photos[0...4].each do |photo| %>
+          <% next if photo_challenge.winning_photo && photo_challenge.winning_photo.photo.id == photo.id %>
           <%= image_tag(photo.picture_url) %>
         <% end %>
         <%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %>

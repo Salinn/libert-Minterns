@@ -253,11 +253,11 @@ ActiveRecord::Schema.define(version: 20150702124219) do
     t.text     "reason"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "picture_id"
+    t.integer  "photo_id"
   end
 
   add_index "winning_photos", ["photo_challenge_id"], name: "index_winning_photos_on_photo_challenge_id"
-  add_index "winning_photos", ["picture_id"], name: "index_winning_photos_on_picture_id"
+  add_index "winning_photos", ["photo_id"], name: "index_winning_photos_on_photo_id"
 
   create_table "years", force: :cascade do |t|
     t.string   "name"

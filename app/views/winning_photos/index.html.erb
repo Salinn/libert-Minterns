@@ -7,6 +7,7 @@
     <tr>
       <th>Photo challenge</th>
       <th>Reason</th>
+      <th>Photo ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= winning_photo.photo_challenge %></td>
         <td><%= winning_photo.reason %></td>
+        <td><%= winning_photo.photo %></td>
         <td><%= link_to 'Show', winning_photo %></td>
         <td><%= link_to 'Edit', edit_winning_photo_path(winning_photo) %></td>
         <td><%= link_to 'Destroy', winning_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
