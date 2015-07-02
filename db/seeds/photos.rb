@@ -82,7 +82,6 @@ photos = [
   {
     gallery_id: 5,
     photo_challenge_id: 6,
-    winning_photo_id: 6,
     remote_picture_url: 'http://static.squarespace.com/static/50c10397e4b02288d89dc9eb/50c61df5e4b0b450608e11da/50c62198e4b0cd7ca3dbc97b/1355162209236/Lustre%20Pearl,%20Rainey%20Street%20Bars%202012IMG_5812.jpg?format=1000w',
     comment: ''
   },
@@ -101,7 +100,6 @@ photos = [
   {
     gallery_id: 6,
     photo_challenge_id: 7,
-    winning_photo_id: 7,
     remote_picture_url: 'http://static2.businessinsider.com/image/54dbf42aeab8eac25d761a21-960/new-york-city-skyline-and-statue-of-liberty-11.jpg',
     comment: ''
   },
@@ -114,7 +112,6 @@ photos = [
   {
     gallery_id: 7,
     photo_challenge_id: 8,
-    winning_photo_id: 8,
     remote_picture_url: 'http://i.dailymail.co.uk/i/pix/2014/05/20/article-2633663-1E078CD100000578-340_634x621.jpg',
     comment: ''
   }

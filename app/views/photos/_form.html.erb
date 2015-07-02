@@ -28,10 +28,6 @@
     <%= f.label :photo_challenge_id %><br>
     <%= f.collection_select :photo_challenge_id, @photo_challenges.reverse, :id, :title, :include_blank => true %>
   </div>
-  <div class="field">
-    <%= f.label :winning_photo_id %><br>
-    <%= f.collection_select :winning_photo_id, @winning_photos.reverse, :id, :reason, :include_blank => true %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

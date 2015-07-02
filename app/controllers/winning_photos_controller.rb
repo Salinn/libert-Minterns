@@ -69,6 +69,6 @@ class WinningPhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def winning_photo_params
-      params.require(:winning_photo).permit(:photo_challenge_id, :reason)
+      params.require(:winning_photo).permit(:photo_challenge_id, :reason, :picture_id)
     end
 end

@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-    @events_by_date = @events.group_by(&:start_daettime)
+    @events_by_date = @events.group_by(&:start_date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
@@ -75,6 +75,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :location, :start_daettime, :end_datetime, :cost, :reoccur, :description)
+      params.require(:event).permit(:name, :location, :start_date, :end_date, :start_time, :end_time, :cost, :reoccur, :description)
     end
 end

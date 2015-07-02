@@ -1,4 +1,4 @@
-#TODO add winning photo
+#TODO add winning photo to seed data
 #Not working currenly
 winning_photos = [
   {
