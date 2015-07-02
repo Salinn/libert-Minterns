@@ -248,8 +248,16 @@ ActiveRecord::Schema.define(version: 20150702124219) do
   add_index "vote_trackers", ["rating_id"], name: "index_vote_trackers_on_rating_id"
   add_index "vote_trackers", ["user_id"], name: "index_vote_trackers_on_user_id"
 
-# Could not dump table "winning_photos" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "winning_photos", force: :cascade do |t|
+    t.integer  "photo_challenge_id"
+    t.text     "reason"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "picture_id"
+  end
+
+  add_index "winning_photos", ["photo_challenge_id"], name: "index_winning_photos_on_photo_challenge_id"
+  add_index "winning_photos", ["picture_id"], name: "index_winning_photos_on_picture_id"
 
   create_table "years", force: :cascade do |t|
     t.string   "name"

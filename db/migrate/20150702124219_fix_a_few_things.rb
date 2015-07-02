@@ -10,6 +10,6 @@ class FixAFewThings < ActiveRecord::Migration
     
     remove_column :photos, :winning_photo_id
     
-    add_column :winning_photos, :picture, :belongs_to
+    add_reference :winning_photos, :picture, index: true
   end
 end
