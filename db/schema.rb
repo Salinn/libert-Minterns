@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630140512) do
+ActiveRecord::Schema.define(version: 20150702124219) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content"
@@ -62,13 +62,15 @@ ActiveRecord::Schema.define(version: 20150630140512) do
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
-    t.datetime "start_daettime"
-    t.datetime "end_datetime"
     t.string   "cost"
     t.integer  "reoccur"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
+    t.date     "start_date"
+    t.time     "start_time"
+    t.date     "end_date"
+    t.time     "end_time"
   end
 
   create_table "faq_sections", force: :cascade do |t|
@@ -137,14 +139,12 @@ ActiveRecord::Schema.define(version: 20150630140512) do
     t.text     "comment"
     t.integer  "gallery_id"
     t.integer  "photo_challenge_id"
-    t.integer  "winning_photo_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   add_index "photos", ["gallery_id"], name: "index_photos_on_gallery_id"
   add_index "photos", ["photo_challenge_id"], name: "index_photos_on_photo_challenge_id"
-  add_index "photos", ["winning_photo_id"], name: "index_photos_on_winning_photo_id"
 
   create_table "questions", force: :cascade do |t|
     t.string   "title"
@@ -248,14 +248,8 @@ ActiveRecord::Schema.define(version: 20150630140512) do
   add_index "vote_trackers", ["rating_id"], name: "index_vote_trackers_on_rating_id"
   add_index "vote_trackers", ["user_id"], name: "index_vote_trackers_on_user_id"
 
-  create_table "winning_photos", force: :cascade do |t|
-    t.integer  "photo_challenge_id"
-    t.text     "reason"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  add_index "winning_photos", ["photo_challenge_id"], name: "index_winning_photos_on_photo_challenge_id"
+# Could not dump table "winning_photos" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "years", force: :cascade do |t|
     t.string   "name"

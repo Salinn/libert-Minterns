@@ -44,6 +44,10 @@ gem 'will_paginate'
 #Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
 gem "rails_config"
 
+#JQuery for datepicker and timepicker
+gem 'jquery-ui-rails'
+gem 'jquery-timepicker-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

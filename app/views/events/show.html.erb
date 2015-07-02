@@ -1,34 +1,52 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
-</p>
-
-<p>
   <strong>Location:</strong>
   <%= @event.location %>
 </p>
 
 <p>
-  <strong>Start daettime:</strong>
-  <%= @event.start_daettime %>
+  <strong>Start date:</strong>
+  <%= @event.start_date %>
+  <strong>End date:</strong>
+  <%= @event.end_date %>
 </p>
 
 <p>
-  <strong>End datetime:</strong>
-  <%= @event.end_datetime %>
+  <strong>Start time:</strong>
+  <%= @event.start_time %>
+  <strong>End time:</strong>
+  <%= @event.end_time %>
 </p>
 
 <p>
   <strong>Cost:</strong>
   <%= @event.cost %>
 </p>
-
-<p>
-  <strong>Reoccur:</strong>
-  <%= @event.reoccur %>
-</p>
-
+<% if Date.today > @event.start_date %>
+  <hr>
+  <% if @event.gallery.photos.any? %>
+    <% @event.gallery.photos.each do |photo| %>
+      <%= image_tag(photo.picture_url) %>
+    <% end %>
+  <% else %>
+    <p>No pictures have been uploaded for this event</p>
+  <% end %>
+<% end %>
+<hr>
+<h1>TODO: Add RSVP Fuctionality</h1>
+<hr>
+<h3>Ask questions or leave comments</h3>
+<%= render 'comments/form_for_events' %>
+<% if @event.comments.any? %>
+  <% @event.comments.each do |comment| %>
+    <h4>Title: <%= comment.title %></h4>
+    <p>Context: <%= comment.content %></p>
+    <p>User: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+  <% end %>
+<% else %>
+  <p>No questions or comments have been posted</p>
+<% end %>
+<hr>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

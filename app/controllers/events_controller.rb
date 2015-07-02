@@ -4,12 +4,16 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    
+    @events = Event.where(start_date: @date.beginning_of_month..@date.end_of_month)
+    @events_by_date = @events.group_by(&:start_date)
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @comment = Comment.new
   end
   
   def show_event_photos
@@ -73,6 +77,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :location, :start_daettime, :end_datetime, :cost, :reoccur, :description)
+      params.require(:event).permit(:name, :location, :start_date, :end_date, :start_time, :end_time, :cost, :reoccur, :description)
     end
 end
