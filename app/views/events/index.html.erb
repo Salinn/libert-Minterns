@@ -10,12 +10,20 @@
    <%= date.day %>
    <% if @events_by_date[date] %>
     <ul>
-      <%= @events_by_date[date].each do |event| %>
+      <% @events_by_date[date].each do |event| %>
         <li><%= link_to event.name, event %></li>
       <% end %>
     </ul>
    <% end %>
  <% end %>
 </div>
+
+<% @events_by_date.each do |date, events| %>
+  <h3><%= date %></h3>
+  <% events.each do |event| %>
+    <p><%= event.name %> --Description-- <%= event.description %>--Cost-- <%= event.cost %></p>
+  <% end %>
+  <hr>
+<% end %>
 
 <%= link_to 'New Event', new_event_path, data: { no_turbolink: true } %>
