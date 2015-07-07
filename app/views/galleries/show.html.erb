@@ -1,5 +1,10 @@
-<% if @gallery && @gallery.event.name && @gallery.photos.any? %>
+<% if @gallery.event && @gallery.event.name %>
   <%= @gallery.event.name %>
+<% end %>
+<% if @gallery.photo_challenge && @gallery.photo_challenge.title %>
+  <%= @gallery.photo_challenge.title %>
+<% end %>
+<% if @gallery.photos.any? %>
   <% @gallery.photos.each do |photo| %>
     <%= link_to image_tag(photo.picture_url), photo_path(photo.id) %>
   <% end %>
