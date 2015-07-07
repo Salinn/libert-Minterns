@@ -15,9 +15,9 @@
   <tbody>
     <% @winning_photos.each do |winning_photo| %>
       <tr>
-        <td><%= winning_photo.photo_challenge %></td>
+        <td><%= winning_photo.photo_challenge.title %></td>
         <td><%= winning_photo.reason %></td>
-        <td><%= winning_photo.photo %></td>
+        <td><%= image_tag(winning_photo.photo.picture_url(:large)) %></td>
         <td><%= link_to 'Show', winning_photo %></td>
         <td><%= link_to 'Edit', edit_winning_photo_path(winning_photo) %></td>
         <td><%= link_to 'Destroy', winning_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,7 +25,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Winning photo', new_winning_photo_path %>

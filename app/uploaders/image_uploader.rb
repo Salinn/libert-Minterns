@@ -25,15 +25,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Process files as they are uploaded:
-  version :large_avatar do
+  version :large do
     # returns a 150x150 image
     process :resize_to_fill => [150, 150]
   end
-  version :medium_avatar do
+  version :medium do
     # returns a 50x50 image
     process :resize_to_fill => [50, 50]
   end
-  version :small_avatar do
+  version :thumb do
     # returns a 35x35 image
     process :resize_to_fill => [35, 35]
   end
