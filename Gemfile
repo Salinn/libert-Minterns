@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -74,5 +71,15 @@ group :development, :test do
   #Useful for debugging
   gem 'better_errors'
   gem 'binding_of_caller'
+  
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
+#Gems used in production
+group :production do
+  gem 'rails_12factor'
+
+  #The database used in production
+  gem 'pg'
+end

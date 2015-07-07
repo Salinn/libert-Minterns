@@ -1,10 +1,10 @@
 class WinningPhotosController < ApplicationController
-  before_action :set_winning_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_winning_photo, only: [:show, :edit, :update, :destroy, :pick_winning_photo]
 
   # GET /winning_photos
   # GET /winning_photos.json
   def index
-    @winning_photos = WinningPhoto.all
+    @winning_photos = WinningPhoto.all.reverse
   end
 
   # GET /winning_photos/1
@@ -19,6 +19,7 @@ class WinningPhotosController < ApplicationController
 
   # GET /winning_photos/1/edit
   def edit
+    @photos = @winning_photo.photo_challenge.photos
   end
 
   # POST /winning_photos
@@ -60,7 +61,7 @@ class WinningPhotosController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_winning_photo
@@ -69,6 +70,6 @@ class WinningPhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def winning_photo_params
-      params.require(:winning_photo).permit(:photo_challenge_id, :reason, :picture_id)
+      params.require(:winning_photo).permit(:photo_challenge_id, :reason, :photo_id)
     end
 end
