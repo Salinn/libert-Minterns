@@ -1,7 +1,15 @@
 <% if @photo_challenge %>
   <%= @photo_challenge.title %>
   <% if @photo_challenge.photos.any? %>
+    <% if @photo_challenge.winning_photo  %>
+      <%= image_tag(@photo_challenge.winning_photo.photo.picture_url) %>
+      <h3>Reason: <%= @photo_challenge.winning_photo.reason %></h3>
+      <hr>
+    <% else %>
+      <%= render 'photos/submit_photo' %>
+    <% end %>
     <% @photo_challenge.photos.each do |photo| %>
+      <% next if @photo_challenge.winning_photo && @photo_challenge.winning_photo.photo.id == photo.id %>
       <%= link_to image_tag(photo.picture_url), photo_path(photo.id) %>
     <% end %>
   <% else %>

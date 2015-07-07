@@ -14,6 +14,7 @@ class PhotoChallengesController < ApplicationController
   
   def photo_challenge_gallery
     @photo_challenge = PhotoChallenge.find(params[:photo_challenge_id])
+    @photo = Photo.new
   end
 
   # GET /photo_challenges/new
