@@ -45,6 +45,9 @@ gem "rails_config"
 gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
 
+#HTTP Server
+gem 'puma'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
