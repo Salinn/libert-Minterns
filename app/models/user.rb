@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  searchkick word_start: [:first_name, :last_name], text_start: [:first_name]
+  scope :search_import, -> { includes(:major) }
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,6 +11,9 @@ class User < ActiveRecord::Base
   
   has_many :vote_trakers, dependent: :destroy
   has_many :ratings, through: :vote_trakers
+  
+  belongs_to :major
+  belongs_to :college
          
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
@@ -28,5 +33,5 @@ class User < ActiveRecord::Base
         )
       end
    end
-end
+  end
 end

@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, :except => [:home, :public_images]
+  before_action :authenticate_user!, :except => [:home, :public_images, :interns]
+  helper_method :sort_column, :sort_direction
   
   def home
     
@@ -16,5 +17,20 @@ class StaticPagesController < ApplicationController
     @faq = Faq.new
     @faq.questions.build
     @faq_sections = FaqSection.all
+  end
+  
+  def  interns
+    if params[:query].present?
+      @users = User.order(sort_column + " " + sort_direction)
+    else
+      @users = User.all.order(sort_column + " " + sort_direction)
+    end
+  end
+  def sort_column
+    params[:sort] || 'first_name'
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end

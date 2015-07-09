@@ -67,3 +67,17 @@ div {
     list-style: square;
   }
 }
+
+ .users th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.users th .asc {
+  background-image: url(http://www.pearsonvue.com/athena/static/images/up_arrow.gif);
+}
+
+.users th .desc {
+  background-image: url(http://www.pearsonvue.com/athena/static/images/down_arrow.gif);
+}
