@@ -21,11 +21,16 @@ class StaticPagesController < ApplicationController
   
   def  interns
     if params[:query].present?
-      @users = User.order(sort_column + " " + sort_direction)
+      @users = User.order(sort_column + " " + sort_direction).search(
+        params[:query],
+        page: params[:page],
+        fields: [{first_name: :word_start}, {last_name: :word_start},
+        {first_name: :text_start}])
     else
       @users = User.all.order(sort_column + " " + sort_direction)
     end
   end
+  
   def sort_column
     params[:sort] || 'first_name'
   end
