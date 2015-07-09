@@ -36,7 +36,8 @@ gem 'will_paginate'
 #Basic searching
 #gem 'chosen-rails'
 #gem 'select2-rails'
-gem 'searchkick'
+#gem 'searchkick'
+gem 'ransack'
 
 #Settings Config gem
 #Look at this for heroku https://github.com/railsconfig/rails_config#working-with-heroku
