@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, :except => [:home, :public_images]
+  before_action :authenticate_user!, :except => [:home, :public_images, :users]
   
   def home
     
@@ -16,5 +16,10 @@ class StaticPagesController < ApplicationController
     @faq = Faq.new
     @faq.questions.build
     @faq_sections = FaqSection.all
+  end
+  
+  def users
+    @search = User.ransack(params[:q])
+    @users = @search.result.includes(:major, :college)
   end
 end

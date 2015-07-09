@@ -1,0 +1,37 @@
+ <%= search_form_for @search do |f| %>
+ <div class="field">
+    <%= f.text_field :first_name_cont, placeholder: 'Search by First Name'  %>
+    <%= f.text_field :last_name_cont, placeholder: 'Search by Last Name'  %>
+  <%= f.search_field :major_name_cont, placeholder: 'Search by Major' %>
+  <%= f.search_field :college_name_cont, placeholder: 'Search by College' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Search" %>
+  </div>
+  <div>
+    <%= link_to 'Clear Search', users_path %>
+  </div>
+<% end %>
+
+<table class'interns'>
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= sort_link @search, :first_name, "First Nam" %></th>
+      <th><%= sort_link @search, :last_name, "Last Name" %></th>
+      <th><%= sort_link @search, :major_name, "Major" %></th>
+      <th><%= sort_link @search, :college_name, "College" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td style=''><%= image_tag(user.profile_picture_url(:medium)) %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.major.name %></td>
+        <td><%= user.college.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
