@@ -1,21 +1,30 @@
 <div class="row">
-<%= link_to 'Past Intern Expeirence', '#Summaries', class: 'section' %>
-<%= link_to 'FAQ about our programs', '#FAQ', class: 'section' %>
-<%= link_to 'Ask a question', '#AskAQuestion', class: 'section' %>
+  <div class='col-md-6 col-md-offset-3' style='padding-top: 20px;'>
+    <ul class="nav navbar-nav" style='padding-right: 10px; font-size: larger;'>
+      <%= link_to 'Past Intern Expeirence |', '#Summaries', class: 'section' %>
+    </ul>
+    <ul class="nav navbar-nav" style='padding-right: 10px; font-size: larger;'>
+      <%= link_to 'FAQ about our programs |', '#FAQ', class: 'section' %>
+    </ul>
+    <ul class="nav navbar-nav" style='padding-right: 10px; font-size: larger;'>
+      <%= link_to 'Ask a question', '#AskAQuestion', class: 'section' %>
+    </ul>
+  </div>
+  
+  <div class='clear'></div>
 
-
-<!-- should move style into a class -->
-<div id='master-div'>
-  <div class="sections" id='Summaries' style='display: none'>
-    <%= render 'intern_summaries/show_intern_summaries' %>
+  <!-- should move style into a class -->
+  <div id='master-div'>
+    <div class="sections" id='Summaries' style='display: none'>
+      <%= render 'intern_summaries/show_intern_summaries' %>
+    </div>
+    <div class="sections" id='FAQ' style='display: none'>
+      <%= render 'faqs/question_and_answers' %>
+    </div>
+    <div class="sections col-md-4 col-md-offset-4" id='AskAQuestion' style='display: none'>
+      <%= render 'faqs/ask_question' %>
+    </div>
   </div>
-  <div class="sections" id='FAQ' style='display: none'>
-    <%= render 'faqs/question_and_answers' %>
-  </div>
-  <div class="sections col-md-6 col-md-offset-3" id='AskAQuestion' style='display: none'>
-    <%= render 'faqs/ask_question' %>
-  </div>
-</div>
 </div>
 
 <script>

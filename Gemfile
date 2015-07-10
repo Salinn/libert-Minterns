@@ -5,7 +5,8 @@ gem 'rails', '4.2.2'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.5'
-gem 'sass-rails', '>= 3.2'
+gem 'sass-rails', '~> 5.0'
+gem 'compass-rails', '~> 2.0.4'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -35,7 +36,7 @@ gem 'acts-as-taggable-on'
 gem 'will_paginate'
 
 #Basic searching
-#gem 'chosen-rails'
+gem 'chosen-rails'
 #gem 'select2-rails'
 #gem 'searchkick'
 gem 'ransack'

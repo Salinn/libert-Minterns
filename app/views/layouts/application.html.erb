@@ -12,8 +12,12 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   
-  <%= yield %>
+  <div id='body'>
+    <%= yield %>
+  </div>
   
-  <%= render 'layouts/footer' %>
+  <div id='body'>
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
