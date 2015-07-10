@@ -1,37 +1,52 @@
- <%= search_form_for @search do |f| %>
- <div class="field">
-    <%= f.text_field :first_name_cont, placeholder: 'Search by First Name'  %>
-    <%= f.text_field :last_name_cont, placeholder: 'Search by Last Name'  %>
-  <%= f.search_field :major_name_cont, placeholder: 'Search by Major' %>
-  <%= f.search_field :college_name_cont, placeholder: 'Search by College' %>
+<div class="row">
+  <div class='col-md-8 col-md-offset-2'>
+    <div align='center'>
+      <%= search_form_for @search do |f| %>
+        <div class="field">
+          <%= f.text_field :first_name_cont, placeholder: 'Search by First Name'  %>
+          <%= f.text_field :last_name_cont, placeholder: 'Search by Last Name'  %>
+          <%= f.search_field :major_name_cont, placeholder: 'Search by Major' %>
+          <%= f.search_field :college_name_cont, placeholder: 'Search by College' %>
+        </div>
+        <div class="actions" style='display: inline;'>
+          <%= f.submit "Search Interns" %>
+        </div>
+        <div style='display: inline;'>
+          <%= link_to 'Clear Search', users_path %>
+        </div>
+      <% end %>
+    </div>
+    
+    <br>
+    
+    <div align='center'>
+      <table class'interns' style='border: 1px solid black;'>
+        <thead>
+          <tr>
+            <th style='padding-left: 5px;padding-right: 10px;'></th>
+            <th style='padding-left: 5px;padding-right: 10px;'><%= sort_link @search, :first_name, "First Nam" %></th>
+            <th style='padding-left: 5px;padding-right: 10px;'><%= sort_link @search, :last_name, "Last Name" %></th>
+            <th style='padding-left: 5px;padding-right: 10px;'><%= sort_link @search, :major_name, "Major" %></th>
+            <th style='padding-left: 5px;padding-right: 10px;'><%= sort_link @search, :college_name, "College" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr data-link="<%= users_path %>">
+              <td align='center'><%= image_tag(user.profile_picture_url(:medium)) %></td>
+              <td style='padding-left: 5px;padding-right: 10px;'><%= user.first_name %></td>
+              <td style='padding-left: 5px;padding-right: 10px;'><%= user.last_name %></td>
+              <td style='padding-left: 5px;padding-right: 10px;'><%= user.major.name %></td>
+              <td style='padding-left: 5px;padding-right: 10px;'><%= user.college.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit "Search" %>
-  </div>
-  <div>
-    <%= link_to 'Clear Search', users_path %>
-  </div>
-<% end %>
-
-<table class'interns'>
-  <thead>
-    <tr>
-      <th></th>
-      <th><%= sort_link @search, :first_name, "First Nam" %></th>
-      <th><%= sort_link @search, :last_name, "Last Name" %></th>
-      <th><%= sort_link @search, :major_name, "Major" %></th>
-      <th><%= sort_link @search, :college_name, "College" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td style=''><%= image_tag(user.profile_picture_url(:medium)) %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.major.name %></td>
-        <td><%= user.college.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
+<script>
+$("tr[data-link]").click(function() {
+  window.location = this.data("link")
+})
+</script>

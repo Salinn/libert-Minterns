@@ -12,6 +12,21 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+th {
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+td {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+table {
+  border-spacing: 0px;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
