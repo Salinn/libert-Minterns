@@ -1,0 +1,67 @@
+header {
+    top: 0;
+}
+
+body {
+    font-family: Garamond;
+    background-image: url(http://i.imgur.com/tJKMqUU.jpg);
+    background: scroll;
+}
+.navbar {
+    margin-bottom: 0px;
+    padding: 0px;
+    height: 70px;
+}
+
+.navbar button {
+    width: 30%
+}
+
+.navbar button:hover{
+    background: #ff0000;
+}
+.navbar-brand {
+    padding: 0px;
+}
+.navbar img {
+    height: 50px;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+header, footer {
+    position: absolute;
+    background-color: rgb(64,86,137);
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    bottom:0;
+}
+
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+.item{
+    background: #333;    
+    text-align: center;
+    height: 550px !important;
+}
+.carousel{
+    margin-top: 150px;
+}
+.bs-example{
+	margin: 20px;
+}
