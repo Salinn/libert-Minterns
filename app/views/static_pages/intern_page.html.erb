@@ -1,3 +1,4 @@
+<div class="row">
 <%= link_to 'Past Intern Expeirence', '#Summaries', class: 'section' %>
 <%= link_to 'FAQ about our programs', '#FAQ', class: 'section' %>
 <%= link_to 'Ask a question', '#AskAQuestion', class: 'section' %>
@@ -11,9 +12,10 @@
   <div class="sections" id='FAQ' style='display: none'>
     <%= render 'faqs/question_and_answers' %>
   </div>
-  <div class="sections" id='AskAQuestion' style='display: none'>
+  <div class="sections col-md-6 col-md-offset-3" id='AskAQuestion' style='display: none'>
     <%= render 'faqs/ask_question' %>
   </div>
+</div>
 </div>
 
 <script>

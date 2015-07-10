@@ -1,12 +1,45 @@
-<%= link_to 'Home', root_path %>
+<header class="container-fluid">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid padding-navbar">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href='/'>
+          <img src="http://i.imgur.com/nBzfYcQ.jpg" />
+        </a>
+      </div>
 
-<% if user_signed_in? %>
-  <%= link_to 'Img Screen', public_images_path %>
-  <%= link_to 'Intern', '/intern_page#Summaries' %>
-  Signed in as <%= current_user.first_name %>. Not you?
-  <%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
-<% else %>
-  <%= link_to 'Img Screen', public_images_path %>
-  <%= link_to 'Intern', '/intern_page#Summaries' %>
-  <%= link_to "Sign in", new_user_session_path %>
-<% end %>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% if user_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Sign out", destroy_user_session_path,:method => :delete %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">  
+            <li><%= link_to 'Img Screen', public_images_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Intern', '/intern_page#Summaries' %></li>
+          </ul>
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Sign in", new_user_session_path %>></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">  
+            <li><%= link_to 'Img Screen', public_images_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Intern', '/intern_page#Summaries' %></li>
+          </ul>
+        <% end %>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <h1><strong>Liberty Minterns</strong></h1>
+  <h4>The Freshest Opportunities</h4>
+</header>
