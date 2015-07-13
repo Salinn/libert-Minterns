@@ -1,9 +1,17 @@
 module StaticPagesHelper
-  def up_voted(faq)
-    @votes.where(rating: faq.ratings.first, vote_type: 'up').present? ? 'color: orange' : 'color: grey'
+  def faq_up_voted(object)
+    @votes.where(rating: object.ratings.first, vote_type: 'up').present? ? 'color: orange' : 'color: grey'
   end
 
-  def down_voted(faq)
-    @votes.where(rating: faq.ratings.first, vote_type: 'down').present? ? 'color: orange' : 'color: grey'
+  def faq_down_voted(object)
+    @votes.where(rating: object.ratings.first, vote_type: 'down').present? ? 'color: orange' : 'color: grey'
+  end
+  
+  def answer_up_voted(object)
+    @votes.where(rating: object.rating, vote_type: 'up').present? ? 'color: orange' : 'color: grey'
+  end
+
+  def answer_down_voted(object)
+    @votes.where(rating: object.rating, vote_type: 'down').present? ? 'color: orange' : 'color: grey'
   end
 end
