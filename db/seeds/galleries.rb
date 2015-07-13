@@ -1,31 +1,33 @@
+events = Event.all
+photo_challenges = PhotoChallenge.all
 galleries = [
   {
     name: 'Pick up soccer',  
-    event_id: 1
+    event: events[0] 
   },
   {
     name: 'Portsmouth market day',  
-    event_id: 2
+    event: events[1]
   },
   {
     name: 'Intern pick up volleyball',  
-    event_id: 3
+    event: events[2]
   },
   {
     name: 'Red Sox Gamey',  
-    event_id: 4
+    event: events[3]
   },
   {
     name: 'Week 1',  
-    photo_challenge_id: 6
+    photo_challenge: photo_challenges[5]
   },
   {
     name: 'Week 2',  
-    photo_challenge_id: 7
+    photo_challenge: photo_challenges[5]
   },
   {
     name: 'Week 3',  
-    photo_challenge_id: 8
+    photo_challenge: photo_challenges[7]
   }
 ]
 Gallery.delete_all

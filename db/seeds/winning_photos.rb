@@ -1,20 +1,20 @@
-#TODO add winning photo to seed data
-#Not working currenly
+photo_challenge = PhotoChallenge.all 
+photo = Photo.all
 winning_photos = [
   {
-    photo_challenge_id: 6,
+    photo_challenge: photo_challenge[5],
     reason: 'something something something',
-    photo_id: 19
+    photo: photo[18]
   },
   {
-    photo_challenge_id: 7,
+    photo_challenge: photo_challenge[6],
     reason: 'something something something',
-    photo_id: 20
+    photo: photo[19]
   },
   {
-    photo_challenge_id: 8,
+    photo_challenge: photo_challenge[7],
     reason: 'something something something',
-    photo_id: 22
+    photo: photo[21]
   },
 ]
 WinningPhoto.delete_all
