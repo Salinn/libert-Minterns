@@ -1,11 +1,9 @@
-<h1>All of those images</h1>
-
-<h3>Photo of the week</h3>
+<h1 align='center'>Weekly Photo Challenge</h1>
 <% if @photo_challenge %>
-  <%= @photo_challenge.title %>
+ <h3><%= @photo_challenge.title %></h3>
   <% if @photo_challenge.photos.any? %>
     <% @photo_challenge.photos[0...5].each do |photo| %>
-      <%= image_tag(photo.picture_url) %>
+      <%= image_tag(photo.picture_url, style: 'max-height: 250px; max-width: 250px;') %>
     <% end %>
   <% else %>
     <h5>No images available</h5>
@@ -13,16 +11,16 @@
 <% else %>
   <h5>No photo challenges were found</h5>
 <% end %>
-<%= link_to 'See More Photo Challenges', photo_challenges_path %>
+<p><%= link_to 'See More Photo Challenges', photo_challenges_path %></p>
 
 
 
-<h3>Events</h3>
+<h1 align='center'>Intern Events</h1>
 <% if @event %>
-  <%= @event.name %>
+  <h3><%= @event.name %></h3>
   <% if @event.gallery && @event.gallery.photos.any? %>
     <% @event.gallery.photos[0...5].each do |photo| %>
-      <%= image_tag(photo.picture_url) %>
+      <%= image_tag(photo.picture_url, style: 'max-height: 250px; max-width: 250px;') %>
     <% end %>
   <% else %>
     <h5>No images available</h5>
@@ -30,8 +28,8 @@
 <% else %>
   <h5>No events were found</h5>
 <% end %>
-<%= link_to 'See More Events', show_event_photos_path %>
+<p><%= link_to 'See More Events', show_event_photos_path %></p>
 
 
-<h3>Office</h3>
+<!-- <h3>Office</h3> -->
 <!-- Need to add images for this -->
