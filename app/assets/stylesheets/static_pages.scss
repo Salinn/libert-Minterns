@@ -1,3 +1,148 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//faq
+a.not-active:hover{
+  background-color: darkgray !important;
+  border-color: darkgray !important;
+}
+
+.faq-cat-content {
+  margin-top: 25px;
+}
+
+.faq-cat-content a:hover{
+  background-color: darkgray;
+}
+
+.faq-cat-tabs li a {
+  padding: 15px 10px 15px 10px;
+  background-color: darkgray;
+  color: white;
+  width: 100% ;
+}
+
+.nav-tabs li a:focus,
+.panel-heading a:focus {
+  outline: none;
+}
+
+.nav-tabs li {
+  padding-right: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-tabs {
+  padding-bottom: 30px;
+  width: 100%;
+  border-bottom: none;
+}
+
+.panel-heading a,
+.panel-heading a:hover,
+.panel-heading a:focus {
+  text-decoration: none;
+  color: darkgray;
+}
+
+.faq-cat-content .panel-heading:hover {
+  background-color: white;
+}
+
+.active-faq {
+  border-left: 5px solid #888888;
+}
+
+.panel-faq .panel-heading .panel-title span {
+  font-size: 13px;
+  font-weight: normal;
+}
+/*_________________  Accordion
+________________________________________*/
+.accordion {
+  position: relative;
+  margin: 60px auto;
+  width: 80%;
+}
+
+.accordion:hover{
+  background-color: #5E0000 !important;
+}
+
+[id*="open-accordion"], [id*="close-accordion"] {
+  background: #5E0000;
+  border-bottom: 1px solid #fff;
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 99%;
+}
+
+[id*="close-accordion"] {
+  display: none;
+}
+
+.accordion a {
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: normal;
+  padding-left: 2%;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+[id*="open-accordion"]:after, [id*="close-accordion"]:after {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  z-index: 999;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.target-fix {
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.accordion-content {
+  background: #fff;
+  height: 0;
+  margin: -1px auto 0;
+  padding: 0 2.5%;
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+}
+
+.accordion span:target ~ .accordion-content {
+  display: block;
+  height: auto;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+.accordion span:target ~ [id*="close-accordion"] {
+  display: block;
+}
+
+.accordion span:target ~ [id*="open-accordion"] {
+  display: none;
+}
+
+.accordion span:target ~ [id*="close-accordion"]:after {
+  border-top: 10px solid #333;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
