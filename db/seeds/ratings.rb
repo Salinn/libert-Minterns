@@ -1,36 +1,37 @@
+faqs = Faq.all
 ratings = [
   {
-    faq_id: 1, #Questions being rated
+    faq: faqs[1], #Questions being rated
     up_votes: 3,
     down_votes: 5,
     total: -2
   },
   {
-    faq_id: 2,
+    faq: faqs[2],
     up_votes: 33,
     down_votes: 5,
     total: 28
   },
   {
-    faq_id: 3,
+    faq: faqs[3],
     up_votes: 13,
     down_votes: 5,
     total: 8
   },
   {
-    faq_id: 4,
+    faq: faqs[4],
     up_votes: 31,
     down_votes: 15,
     total: 16
   },
   {
-    faq_id: 5,
+    faq: faqs[5],
     up_votes: 3,
     down_votes: 10,
     total: -7
   },
   {
-    faq_id: 6,
+    faq: faqs[6],
     up_votes: 300,
     down_votes: 5,
     total: 255

@@ -1,4 +1,4 @@
-class Rating < ActiveRecord::Base
+class Rating < ActiveRecord::Base 
   belongs_to :faq
   
   has_many :vote_trakers, dependent: :destroy
