@@ -16,6 +16,7 @@ class StaticPagesController < ApplicationController
     @faq = Faq.new
     @faq.questions.build
     @faq_sections = FaqSection.all
+    @votes = VoteTracker.where(user: current_user)
   end
   
   def users
