@@ -81,3 +81,9 @@ div {
     list-style: square;
   }
 }
+
+//Without this the content won't stay in the card
+.clear{
+	float: none;
+	clear:both;
+}

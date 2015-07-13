@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'New Photo challenge', new_photo_challenge_path %>
-<br>
-
-<% @photo_challenges.each do |photo_challenge| %>
-  <a href="#<%= photo_challenge.id %>"><%= photo_challenge.title %></a>
-<% end %>
-
+<div>
+<div class='col-md-8 col-md-offset-1' style='float: left;'>
 <% if @photo_challenges.any? %>
   <% @photo_challenges.each do |photo_challenge| %>
     <div id="<%= photo_challenge.id %>">
-      <%= photo_challenge.title %>
+      <h3><%= photo_challenge.title %></h3>
       <% if photo_challenge.photos.any? %>
         <% if photo_challenge.winning_photo  %>
-          <%= image_tag(photo_challenge.winning_photo.photo.picture_url) %>
+          <%= image_tag(photo_challenge.winning_photo.photo.picture_url(:large)) %>
         <% end %>
         <% photo_challenge.photos[0...4].each do |photo| %>
           <% next if photo_challenge.winning_photo && photo_challenge.winning_photo.photo.id == photo.id %>
           <% if photo_challenge.photos.length > 4 %>
-            <%= image_tag(photo_challenge.photos[5].picture_url) %>
+            <%= image_tag(photo_challenge.photos[5].picture_url(:large)) %>
           <% else %>
-            <%= image_tag(photo.picture_url) %>
+            <%= image_tag(photo.picture_url(:large)) %>
           <% end %>
         <% end %>
-        <%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %>
+        <p><%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
       <% else %>
         <h5>No images available</h5>
       <% end %>
@@ -32,4 +25,14 @@
 <% else %>
   <h5>No Photo Challenges found</h5>
 <% end %>
+</div>
+<div class='col-md-2 col-md-offset-1' style='float: right; padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
+<% @grouped_challenges.each do |year, photo_challenges| %>
+<h3><%= photo_challenges.first.year.name %></h3>
+  <% photo_challenges.each do |photo_challenge| %>
+    <a href="#<%= photo_challenge.id %>"><%= photo_challenge.title %></a>
+  <% end %>
+<% end %>
+</div>
+</div>
 

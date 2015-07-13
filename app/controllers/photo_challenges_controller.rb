@@ -4,7 +4,8 @@ class PhotoChallengesController < ApplicationController
   # GET /photo_challenges
   # GET /photo_challenges.json
   def index
-    @photo_challenges = PhotoChallenge.all.reverse
+    @photo_challenges = PhotoChallenge.all
+    @grouped_challenges = @photo_challenges.group_by(&:year_id)
   end
 
   # GET /photo_challenges/1
