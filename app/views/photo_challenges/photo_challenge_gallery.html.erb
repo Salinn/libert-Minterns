@@ -1,5 +1,8 @@
 <% if @photo_challenge %>
-  <h1><%= @photo_challenge.title %></h1>
+<div class='col-md-10 col-md-offset-1'>
+  <h1 style='text-align: center;'><%= @photo_challenge.year.name %>'s -- <%= @photo_challenge.title %> Photo Challenge Pictures</h1>
+  <hr>
+  </div>
   <% if @photo_challenge.winning_photo  %>
   <div class='col-md-8 col-md-offset-2'>
   <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
@@ -16,6 +19,8 @@
   <% else %>
     <%= render 'photos/submit_photo' %>
   <% end %>
+  <div class='clear'></div>
+  <hr>
   <div class='col-md-10 col-md-offset-1'>
   <% if @photo_challenge.photos.any? %>
     <% @photo_challenge.photos.each do |photo| %>
