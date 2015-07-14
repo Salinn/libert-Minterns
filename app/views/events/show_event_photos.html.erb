@@ -3,8 +3,7 @@
 <% if @events.any? %>
   <% @events.each do |event| %>
     <div id="<%= event.id %>">
-      <h3>Event Name: <%= event.name %></h3>
-      <h3>Event Description: <%= event.description %></h3>
+      <h3><%= event.name %></h3>
       <% if event.gallery && event.gallery.photos.any? %>
         <% event.gallery.photos[0...5].each do |photo| %>
           <%= image_tag(photo.picture_url(:large)) %>

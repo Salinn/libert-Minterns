@@ -1,5 +1,7 @@
+<div class='col-md-10 col-md-offset-1'>
 <% if @gallery.event && @gallery.event.name %>
-  <h1 style='text-align: center'>Event Name<%= @gallery.event.name %></h1>
+  <h1 style='text-align: center'><%= @gallery.event.name %></h1>
+  <h3>Event Description: <%= @gallery.event.description %></h3>
 <% end %>
 <% if @gallery.photo_challenge && @gallery.photo_challenge.title %>
   <%= @gallery.photo_challenge.title %>
@@ -15,3 +17,4 @@
   <h5>No images available</h5>
   </div>
 <% end %>
+</div>

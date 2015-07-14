@@ -1,4 +1,5 @@
-<h1 align='center'>Weekly Photo Challenge</h1>
+<div class='col-md-8 col-md-offset-2'>
+<h1 align='center'>Last Weekly Photo Challenge</h1>
 <% if @photo_challenge %>
  <h3><%= @photo_challenge.title %></h3>
   <% if @photo_challenge.photos.any? %>
@@ -12,10 +13,9 @@
   <h5>No photo challenges were found</h5>
 <% end %>
 <p><%= link_to 'See More Photo Challenges', photo_challenges_path %></p>
-
-
-
-<h1 align='center'>Intern Events</h1>
+</div>
+<div class='col-md-8 col-md-offset-2'>
+<h1 align='center'>Last Intern Events</h1>
 <% if @event %>
   <h3><%= @event.name %></h3>
   <% if @event.gallery && @event.gallery.photos.any? %>
@@ -28,7 +28,6 @@
 <% else %>
   <h5>No events were found</h5>
 <% end %>
-<p><%= link_to 'See More Events', show_event_photos_path %></p>
 
-<h3>Office</h3>
-<!-- Need to add images for this -->
+<p><%= link_to 'See More Events', show_event_photos_path %></p>
+</div>

@@ -1,6 +1,6 @@
 <div align='center' class='col-md-8 col-md-offset-2'>
-  <%= image_tag(@photo.picture_url) %>
-<% if @photo.comment %>
+  <%= image_tag(@photo.picture_url, style: 'width:100%; max-width:500px; height: 100%; max-height: 500px;' ) %>
+<% if @photo.comment.size > 0 %>
 <p>
   <strong>Comment:</strong>
   <%= @photo.comment %>
@@ -12,10 +12,10 @@
   <%= @photo.gallery.name %>
 </p>
 <% end %>
-<% if @photo.photo_challenge && @photo.photo_challenge.name%>
+<% if @photo.photo_challenge && @photo.photo_challenge.title %>
 <p>
   <strong>Photo challenge:</strong>
-  <%= @photo.photo_challenge.name %>
+  <%= @photo.photo_challenge.theme %>
 </p>
 <% end %>
 <%= link_to 'Edit', edit_photo_path(@photo) %> |

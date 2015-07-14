@@ -1,6 +1,6 @@
 <% if @photo_challenge %>
 <div class='col-md-10 col-md-offset-1'>
-  <h1 style='text-align: center;'><%= @photo_challenge.year.name %>'s -- <%= @photo_challenge.title %> Photo Challenge Pictures</h1>
+  <h2 style='text-align: center;'><%= @photo_challenge.year.name %>'s <%= @photo_challenge.title %> <%= @photo_challenge.theme %></h2>
   <hr>
   </div>
   <% if @photo_challenge.winning_photo  %>
@@ -25,7 +25,7 @@
   <% if @photo_challenge.photos.any? %>
     <% @photo_challenge.photos.each do |photo| %>
       <% next if @photo_challenge.winning_photo && @photo_challenge.winning_photo.photo.id == photo.id %>
-      <%= link_to image_tag(photo.picture_url, style: 'width:100%; max-width:250px; height: 100%; max-height: 250px;'), photo_path(photo.id) %>
+      <%= link_to image_tag(photo.picture_url, style: 'width:100%; max-width:250px; height: 100%; max-height: 250px; padding: 5px;'), photo_path(photo.id) %>
     <% end %>
   <% else %>
     <h5>No images available</h5>
