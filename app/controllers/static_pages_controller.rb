@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
     @intern_summaries = InternSummary.includes(:user).paginate(:page => params[:page], :per_page => 3)
     @faq = Faq.new
     @faqs = Faq.joins(:rating).order('total').distinct.reverse.group_by(&:faq_section_id)
-    @faq_sections = FaqSection.joins(:faqs)
+    @faq_sections = FaqSection.includes(:faqs)
     @votes = VoteTracker.where(user: current_user)
   end
   
