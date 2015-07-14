@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Picture:</strong>
+<div align='center' class='col-md-8 col-md-offset-2'>
   <%= image_tag(@photo.picture_url) %>
-</p>
-
+<% if @photo.comment %>
 <p>
   <strong>Comment:</strong>
   <%= @photo.comment %>
 </p>
-
+<% end %>
+<% if @photo.gallery && @photo.gallery.name %>
 <p>
   <strong>Gallery:</strong>
-  <%= @photo.gallery %>
+  <%= @photo.gallery.name %>
 </p>
-
+<% end %>
+<% if @photo.photo_challenge && @photo.photo_challenge.name%>
 <p>
   <strong>Photo challenge:</strong>
-  <%= @photo.photo_challenge %>
+  <%= @photo.photo_challenge.name %>
 </p>
-
+<% end %>
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>
+</div>

@@ -1,13 +1,17 @@
 <% if @gallery.event && @gallery.event.name %>
-  <%= @gallery.event.name %>
+  <h1 style='text-align: center'>Event Name<%= @gallery.event.name %></h1>
 <% end %>
 <% if @gallery.photo_challenge && @gallery.photo_challenge.title %>
   <%= @gallery.photo_challenge.title %>
 <% end %>
 <% if @gallery.photos.any? %>
+<div class='col-md-10 col-md-offset-1' style='float: left;'>
   <% @gallery.photos.each do |photo| %>
-    <%= link_to image_tag(photo.picture_url), photo_path(photo.id) %>
+  <div style='background-color: lightgrey; width: 250px; height: 250px; display: inline;'>
+    <%= link_to image_tag(photo.picture_url, style: 'max-width:250px; max-height: 250px;'), photo_path(photo.id) %>
+  </div>
   <% end %>
 <% else %>
   <h5>No images available</h5>
+  </div>
 <% end %>

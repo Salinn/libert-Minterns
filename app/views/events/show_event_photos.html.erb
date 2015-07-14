@@ -1,25 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<% @events.each do |event| %>
-  <a href="#<%= event.id %>"><%= event.name %></a>
-<% end %>
-
+<div>
+<div class='col-md-8 col-md-offset-1' style='float: left;'>
 <% if @events.any? %>
   <% @events.each do |event| %>
     <div id="<%= event.id %>">
-      <%= event.name %>
-      <%= event.description %>
+      <h3>Event Name: <%= event.name %></h3>
+      <h3>Event Description: <%= event.description %></h3>
       <% if event.gallery && event.gallery.photos.any? %>
-        <% event.gallery.photos[0...5].each do |event| %>
-          <%= image_tag(event.picture_url) %>
+        <% event.gallery.photos[0...5].each do |photo| %>
+          <%= image_tag(photo.picture_url(:large)) %>
         <% end %>
-        <%= link_to "See More photos from #{event.name}", gallery_path(event.gallery.id) %>
+        <p><%= link_to "See More photos from #{event.name}", gallery_path(event.gallery.id) %></p>
       <% else %>
         <h5>No images available</h5>
       <% end %>
     </div>
+    <hr>
   <% end %>
 <% else %>
   <h5>No Photo Challenges found</h5>
 <% end %>
+</div>
+<div class='col-md-2 col-md-offset-1' style='float: right; padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
+  <% @events.each do |event| %>
+    <h4><a href="#<%= event.id %>"><%= event.name %></a></h4>
+  <% end %>
+</div>
+</div>
+
 
