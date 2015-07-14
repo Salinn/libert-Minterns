@@ -75,12 +75,12 @@ class AnswersController < ApplicationController
   
   def downvote
     if @rating.total == 0 or @vote_tracker.vote_type == 'down'
-      redirect_to '/intern_page#FAQ', notice: 'Sorry, you have already down voted this question'
+      redirect_to most_faqs_path, notice: 'Sorry, you have already down voted this question'
     else
       down_vote = (@rating.down_votes + 1)
       @rating.update(down_votes: down_vote, total: (@rating.up_votes - down_vote))
       @vote_tracker.update(vote_type: 'down')
-      redirect_to '/intern_page#FAQ', notice: 'Thanks for voting'
+      redirect_to most_faqs_path, notice: 'Thanks for voting'
     end
   end
 

@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  
   get 'tags/:tag', to: 'intern_summaries#index', as: :tag
   get 'winning_photos/:id/pick_winning_photo', to: 'winning_photos#pick_winning_photo', as: :pick_winning_photo
-  
   
   get 'show_event_photos', to: 'events#show_event_photos', as: :show_event_photos
   get 'event_photos/:event_id' => 'events#event_photos', as: 'event_photos'
