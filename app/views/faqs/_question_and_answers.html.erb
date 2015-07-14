@@ -22,12 +22,10 @@
   </div>
 
   <div class="tab-content faq-cat-content">
-    <% @faqs.each_with_index do |faq_sections, index| %>
-    
-      <% faq_sections.each do |faq_section_id, faqs| %>
-        <div class="tab-pane<% if index == 0 %> active in fade<% end %>" id="faq-cat-<%= faq_section_id %>">
+      <% @faqs.each do |faq_section_id, faqs| %>
+        <div class="tab-pane<% if faq_section_id == 1 %> active in fade<% end %>" id="faq-cat-<%= faq_section_id %>">
           <div class="panel-group" id="accordion-cat-<%= faq_section_id %>">
-            <% faq_sections[1].each do |faq| %>
+            <% faqs.each do |faq| %>
                 <div class="panel panel-default panel-faq">
                   <div class="panel-heading">
                     <a data-toggle="collapse" data-parent="#accordion-cat-<%= faq_section_id %>" href="#faq-cat-<%= faq_section_id %>-sub-<%= faq.id %>">
@@ -47,7 +45,6 @@
             <% end %>
           </div>
         </div>
-        <% end %>
     <% end %>
   </div>
 </div>
