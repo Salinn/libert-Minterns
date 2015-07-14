@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   end
   
   def show_event_photos
-    @events = Event.all.reverse
+    @events = Event.all.includes(gallery: :photos).reverse
   end
 
   # GET /events/new

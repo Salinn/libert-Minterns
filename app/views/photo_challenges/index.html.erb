@@ -5,16 +5,8 @@
     <div id="<%= photo_challenge.id %>">
       <h3><%= photo_challenge.title %></h3>
       <% if photo_challenge.photos.any? %>
-        <% if photo_challenge.winning_photo  %>
-          <%= image_tag(photo_challenge.winning_photo.photo.picture_url(:large)) %>
-        <% end %>
-        <% photo_challenge.photos[0...4].each do |photo| %>
-          <% next if photo_challenge.winning_photo && photo_challenge.winning_photo.photo.id == photo.id %>
-          <% if photo_challenge.photos.length > 4 %>
-            <%= image_tag(photo_challenge.photos[5].picture_url(:large)) %>
-          <% else %>
-            <%= image_tag(photo.picture_url(:large)) %>
-          <% end %>
+        <% photo_challenge.photos[0...5].each do |photo| %>
+          <%= image_tag(photo.picture_url(:large)) %>
         <% end %>
         <p><%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
       <% else %>

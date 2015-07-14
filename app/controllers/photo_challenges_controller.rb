@@ -4,7 +4,7 @@ class PhotoChallengesController < ApplicationController
   # GET /photo_challenges
   # GET /photo_challenges.json
   def index
-    @photo_challenges = PhotoChallenge.all
+    @photo_challenges = PhotoChallenge.all.includes([:photos, :year])
     @grouped_challenges = @photo_challenges.group_by(&:year_id)
   end
 
