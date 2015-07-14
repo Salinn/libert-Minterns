@@ -21,7 +21,7 @@
       <div class="field">
         <%= f.fields_for :questions do |question| %>
           <%= question.label :title %><br>
-          <%= question.text_field :title %>
+          <%= question.text_field :title %><br>
           <%= question.label :content %><br>
           <%= question.text_area :content %>
           <%= question.hidden_field :user_id, value: current_user.id %>

@@ -5,23 +5,28 @@
 <table>
   <thead>
     <tr>
-      <th>Rating</th>
       <th>Question</th>
+      <th>Faq Section</th>
+      <th>Rating</th>
       <th>User</th>
       <th>Faq section</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
-    <% @faqs.each do |faq| %>
+    <% @faqs.each do |section_id, faqs| %>
+    <%= section_id %>
+    <% faqs.each do |faq| %>
       <tr>
-        <td><%= faq.questions.first.title %></td>
+        <td><%= faq.question.title %></td>
         <td><%= faq.faq_section.name %></td>
+        <td><%= faq.rating.total %></td>
         <td><%= link_to 'Show', faq %></td>
         <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
         <td><%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

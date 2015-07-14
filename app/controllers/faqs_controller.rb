@@ -5,7 +5,7 @@ class FaqsController < ApplicationController
   # GET /faqs
   # GET /faqs.json
   def index
-    @faqs = Faq.all
+    @faqs = Faq.joins(:rating).order('total').distinct.reverse.group_by(&:faq_section_id)
   end
 
   # GET /faqs/1
@@ -92,13 +92,13 @@ class FaqsController < ApplicationController
     
     def set_faq_for_vote
       @faq = Faq.find(params[:faq_id])
-      @rating = @faq.ratings.first
+      @rating = @faq.rating
       @vote_tracker = VoteTracker.find_or_create_by(user: current_user, rating: @rating)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faq_params
       params.require(:faq).permit(:rating_id, :question_id, :user_id, :faq_section_id,
-                                  questions_attributes: [:title, :content, :user_id])
+                                  question_attributes: [:title, :content, :user_id])
     end
 end

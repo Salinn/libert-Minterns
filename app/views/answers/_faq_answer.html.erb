@@ -1,8 +1,8 @@
 <div style="background-color: lightgray; width: 100%; margin: 0 auto; min-height: 80px;">
   <div style="width: 20px; float: left; margin-left: 2%;">
-    <%= link_to '', faq_upvote_path(answer), method: :post, class: "glyphicon glyphicon-arrow-up", style: answer_up_voted(answer)  %>
+    <%= link_to '', answer_upvote_path(answer), method: :post, class: "glyphicon glyphicon-arrow-up", style: up_voted(answer)  %>
     <h5><%= answer.rating.total %></h5>
-    <%= link_to '', faq_downvote_path(answer), method: :post, class: "glyphicon glyphicon-arrow-down", style: answer_down_voted(answer) %>
+    <%= link_to '', answer_downvote_path(answer), method: :post, class: "glyphicon glyphicon-arrow-down", style: down_voted(answer) %>
   </div>
 
   <div style="display: inline-block; width: 70%; padding-top: 10px; ">
