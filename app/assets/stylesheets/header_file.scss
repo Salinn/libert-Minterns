@@ -58,7 +58,6 @@ footer {
     font-family: "trebuchet ms", sans-serif;    
 }
 .item{
-    background: #333;    
     text-align: center;
     height: 600px !important;
 }
@@ -67,4 +66,25 @@ footer {
 }
 .bs-example{
 	margin: 20px;
+}
+
+.carousel .one {
+    background: url(http://i.imgur.com/GBvqMkO.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .two {
+    background: url(http://i.imgur.com/GC7E3P1.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .three {
+    background: url(http://i.ytimg.com/vi/Fb6zMBS5x9w/maxresdefault.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+
+.carousel a:hover {
+  color: #fff;
+  background-color: transparent;
 }
