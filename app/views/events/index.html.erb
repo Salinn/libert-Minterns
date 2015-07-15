@@ -17,12 +17,27 @@
    <% end %>
  <% end %>
 </div>
-
 <% @events_by_date.each do |date, events| %>
-  <h3><%= date %></h3>
-  <% events.each do |event| %>
-    <p><%= event.name %> --Description-- <%= event.description %>--Cost-- <%= event.cost %></p>
-  <% end %>
+<h3><%= date %></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td><%=  event.cost %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
   <hr>
 <% end %>
 
