@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, :except => [:home, :public_images, :users]
+  before_action :authenticate_user!, :except => [:home, :public_images, :summaries]
   
   def home
     
@@ -15,22 +15,18 @@ class StaticPagesController < ApplicationController
   end
   
   def summaries
-    @intern_summaries = InternSummary.paginate(:page => params[:page], :per_page => 3)
+    @intern_summaries = InternSummary.includes(:user).paginate(:page => params[:page], :per_page => 3)
   end
   
   def most_faqs
-    @faqs = Faq.joins(:rating).order('total').distinct.reverse.group_by(&:faq_section_id)
-    @faq_sections = FaqSection.includes(:faqs)
+    @faqs = Faq.includes(:rating, question: [:answers]).joins(:rating).order('total').distinct.reverse.group_by(&:faq_section_id)
+    @faq_sections = FaqSection.joins(:faqs
+    )
     @votes = VoteTracker.where(user: current_user)
   end
   
   def ask_a_question
     @faq_sections = FaqSection.all
     @faq = Faq.new
-  end
-  
-  def users
-    @search = User.ransack(params[:q])
-    @users = @search.result.includes(:major, :college)
   end
 end
