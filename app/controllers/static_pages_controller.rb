@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
   end
   
   def summaries
+    @tags = ActsAsTaggableOn::Tag.most_used
     @intern_summaries = InternSummary.includes(:user).paginate(:page => params[:page], :per_page => 3)
   end
   
