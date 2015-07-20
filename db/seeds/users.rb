@@ -31,7 +31,7 @@ users = [
     phone_number: '1231231234',
     major: majors[3],
     college: colleges[2],
-    remote_profile_picture_url: 'http://wallpapers111.com/wp-content/uploads/2015/06/Megan-Fox-Transformers-Wallpapers-4.jpg',
+    remote_profile_picture_url: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQywreEfnoN3t1P3p8b3wCKpUdt6JqIlpFraSU7jFxudtC0Zztu',
     password: 'topsecret', 
     password_confirmation: 'topsecret'
   },

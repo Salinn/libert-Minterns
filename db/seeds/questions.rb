@@ -28,7 +28,7 @@ questions = [
   },
   {
     title: 'Question 5',
-    content: 'If Liberty hadn't met Mutual on that rainy night, what would that have been like for Liberty Mutual?',
+    content: "If Liberty hadn't met Mutual on that rainy night, what would that have been like for Liberty Mutual?",
     user: users[1],
     faq: faqs[4]
   },
@@ -37,7 +37,7 @@ questions = [
     content: 'How early should I arrive on an average day of work?',
     user: users[1],
     faq: faqs[5]
-  },
+  }
 ]
 Question.delete_all
 Question.create!(questions)

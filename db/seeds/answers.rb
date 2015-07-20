@@ -21,7 +21,6 @@ answers = [
     user: users[3],
     question: questions[3],
     content: 'Our goal is to find employment for all monsters, and as the times change, we must change with them.  As culture leads us away from your "under the bed" monsters, we hope to transition to a more frightening Garage setting, or maybe even expand further into the food pantry sector.  Initial numbers from a collection of test monsters have produced fantastic results, but we are unsure how scalable that operation may be.'
-'
   },
   {
     user: users[2],

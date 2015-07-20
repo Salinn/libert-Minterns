@@ -37,8 +37,7 @@ intern_summaries = [
   },
   {
     title: '6 Easy tips for tipping in Tippecanoe County (IN)',
-    content: '<p> Indiana is a huge state, but Tippecanoe is special; if you decide to visit over the summer, here are 6 things to consider when handling your bill in restaurants:</p><p> 1. If you have a smaller meal, tip slightly larger.  a 50 cent tip is nice, but really not much different from a dollar to you, so go big or go home :)</p><p></p><p> 2. 15% is a solid, go to number.  Better service can get more, poorer service less, but 15 is a decent base.</p><p></p><p> 3. cash is preferred payment, due to high processing fees for credit cards.  keep this in mind, your servers will appreciate it!</p><p></p><p> 4. Reason Number 4 :)</p><p></p><p> 5. Talk to your wait-staff (if it`s not too busy).  Get to know them, learn their stories.  Then tip 20%.</p><p></p><p> 6. If you do get change, save your ones and tip with other bills.  This saves most of your ones for other purposes ;) </p>'
-
+    content: '<p> Indiana is a huge state, but Tippecanoe is special; if you decide to visit over the summer, here are 6 things to consider when handling your bill in restaurants:</p><p> 1. If you have a smaller meal, tip slightly larger.  a 50 cent tip is nice, but really not much different from a dollar to you, so go big or go home :)</p><p></p><p> 2. 15% is a solid, go to number.  Better service can get more, poorer service less, but 15 is a decent base.</p><p></p><p> 3. cash is preferred payment, due to high processing fees for credit cards.  keep this in mind, your servers will appreciate it!</p><p></p><p> 4. Reason Number 4 :)</p><p></p><p> 5. Talk to your wait-staff (if it`s not too busy).  Get to know them, learn their stories.  Then tip 20%.</p><p></p><p> 6. If you do get change, save your ones and tip with other bills.  This saves most of your ones for other purposes ;) </p>',
     user: users[4],
     tag_list: 'it, software development, python'
   }
