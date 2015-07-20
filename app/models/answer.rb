@@ -6,7 +6,7 @@ class Answer < ActiveRecord::Base
   after_create :create_rating
 
   def create_rating
-    rating = Rating.create!(faq_id: self.question.faq.id)
+    rating = Rating.create!()
     self.update(rating_id: rating.id)
   end
 end

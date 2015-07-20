@@ -23,6 +23,7 @@
           <div class="tab-pane<% if faq_section_id == 1 %> active in fade<% end %>" id="faq-cat-<%= faq_section_id %>">
             <div class="panel-group" id="accordion-cat-<%= faq_section_id %>">
               <% faqs.each do |faq| %>
+
                   <div class="panel panel-default panel-faq">
                     <div class="panel-heading">
                       <a data-toggle="collapse" data-parent="#accordion-cat-<%= faq_section_id %>" href="#faq-cat-<%= faq_section_id %>-sub-<%= faq.id %>">

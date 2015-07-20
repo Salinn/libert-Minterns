@@ -64,12 +64,12 @@ class AnswersController < ApplicationController
   
   def upvote
     if @vote_tracker.vote_type == 'up'
-      redirect_to '/intern_page#FAQ', notice: 'Sorry, you have already up voted this question'
+      redirect_to most_faqs_path, notice: 'Sorry, you have already up voted this question'
     else
       up_vote = (@rating.up_votes + 1)
       @rating.update(up_votes: up_vote, total: (up_vote - @rating.down_votes))
       @vote_tracker.update(vote_type: 'up')
-      redirect_to '/intern_page#FAQ', notice: 'Thanks for voting'
+      redirect_to most_faqs_path, notice: 'Thanks for voting'
     end
   end
   
@@ -93,7 +93,7 @@ class AnswersController < ApplicationController
     #Look at changing this so it in DRY (look at faq controller), possibly put it in rating controller
     def set_answer_for_vote
       @answer = Faq.find(params[:answer_id])
-      @rating = @answer.ratings.first
+      @rating = @answer.rating
       @vote_tracker = VoteTracker.find_or_create_by(user: current_user, rating: @rating)
     end
 
