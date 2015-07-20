@@ -5,32 +5,33 @@ answers = [
   {
     user: users[2],
     question: questions[0],
-    content: 'Sed gravida turpis mauris, quis mollis arcu malesuada eu. Cras vitae eros quis eros vulputate sagittis eu vel felis. Duis dictum pulvinar consequat. Sed facilisis, ex nec accumsan congue, lacus nisl sollicitudin velit, ut accumsan justo neque aliquam lectus. Donec interdum sem ut mauris maximus, id scelerisque ipsum tincidunt.'
+    content: 'The nation of Swaziland holds that particular claim to fame. with their impressive model airplane industry beginning in the young year of 1723.  This is truly incredible, as airplanes wouldn`t exist for over a century after that!  Sensational forward vision by the nation of Swaziland.'
   },
   {
     user: users[1],
     question: questions[1],
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat tempus est quis porttitor. Nam lobortis euismod lorem id viverra. In at libero ac ligula ultricies aliquet. Fusce pulvinar facilisis eleifend. Suspendisse dui leo, maximus at feugiat sit amet, vestibulum nec arcu. Integer eleifend mauris ut congue vehicula. Morbi cursus, ex non venenatis suscipit, magna nisl sollicitudin tellus, sit amet pellentesque tortor eros non quam. Ut diam ipsum, fermentum vel tortor et, maximus facilisis eros. Cras porttitor congue ligula sed maximus. Aenean eu imperdiet turpis, vel maximus lacus. Aenean convallis tortor et volutpat fermentum.'
+    content: 'The short answer: Because.  The slightly longer answer: Due to the nature of the universe and our perception of time, events happen in some sort of order (from our perspective).  This order, or series if you will, of events is strung together by the principals of cause and effect.  If we look at an event, we assume that previous events (temporally speaking) created situations or events which led (by a causal relationship) to the first considered event.  As such, each event has an effect on some other events, and is itself created and effected by other events.  Some set of events exists to provide an answer for "why?" but at the moment we have neither the knowledge nor the perspective to correctly identify the appropriate answer set.  We almost certainly never will, and the only option left to us is to believe in free will and blindy push forward in life, hoping to achieve some greater purpose or gather some meaning to our pitifully small existences.  Hope this helps!.'
   },
   {
     user: users[1],
     question: questions[2],
-    content: 'Donec pretium, magna pretium suscipit consectetur, nisl orci iaculis sapien, non facilisis dui sapien molestie neque. Aenean volutpat et quam quis ultricies.'
+    content: 'Business Casual.'
   },
   {
     user: users[3],
     question: questions[3],
-    content: 'Nulla eu augue semper, tempor libero pretium, convallis est. Aliquam erat volutpat. In lobortis semper enim, ac elementum neque imperdiet non. Praesent lorem ipsum, dignissim ut eleifend et, suscipit eu elit. Integer quis quam nec felis accumsan congue ac et augue. Quisque vitae libero sit amet tortor finibus suscipit.'
+    content: 'Our goal is to find employment for all monsters, and as the times change, we must change with them.  As culture leads us away from your "under the bed" monsters, we hope to transition to a more frightening Garage setting, or maybe even expand further into the food pantry sector.  Initial numbers from a collection of test monsters have produced fantastic results, but we are unsure how scalable that operation may be.'
+'
   },
   {
     user: users[2],
     question: questions[4],
-    content: 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur at lorem id risus dictum mollis id quis arcu.'
+    content: 'Then you would not have a job.'
   },
   {
     user: users[1],
     question: questions[5],
-    content: 'Morbi finibus eu libero ac pulvinar. In pretium porttitor bibendum. Quisque convallis dolor quis hendrerit accumsan. Vestibulum ullamcorper molestie suscipit. Vivamus vestibulum tempus nibh lobortis hendrerit.'
+    content: 'You should get in around 6 a.m. and wait in your managers office until he arrives.'
   }
 ]
 Answer.delete_all

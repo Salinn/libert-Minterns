@@ -7,20 +7,39 @@ intern_summaries = [
   },
   {
     title: "Liberty's IT impact on me!",
-    content: 'Mauris convallis odio neque, ac egestas nisl tempus at. Morbi auctor, orci sit amet molestie pulvinar, ex leo rhoncus massa, ut condimentum metus felis eget felis. Etiam ultrices, lorem nec fringilla rutrum, arcu elit rhoncus neque, in interdum nunc elit vitae nunc. Donec diam sapien, auctor id nisl id, interdum cursus elit. Fusce ut justo eu orci finibus viverra sit amet nec odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam vitae lobortis diam.',
+    content: 'My time at Liberty was one of learning and reflection. As I sat in my cube, looking out the window into the trees across the long field of cement we call a parking lot, I prepared for my next step in life. There was no going back; it was in the rear view mirror now and all I could do was to continue on. I stood up, ONWARD! I yelled to setting my Lync Status to busy. I charged to the stairs, stampeded through the front door past security. I was free! I looked to my right as I exit the building only to see my reflection in the conference room window. I could see into my eyes, I could see into my soul. The rain began to accumulate on my head, it poured down my face. I don’t know what I am doing, my insides began to cry. But I must continue, and so I did. ONWARD! I beckoned from the pit of my stomach! I continued my sprint into the woods with the strength of 100 mice. I was Liberated. A Mutual respect had been solidified between nature and myself. I was Liberty Mutualed.',
     user: users[1],
     tag_list: 'java, it, software development'
   },
   {
-    title: 'Learning, Growing, and Exploring careers at Liberty',
-    content: 'Donec porttitor nulla vel arcu dapibus iaculis. Etiam hendrerit magna ut nulla ultricies, sed ultrices ante volutpat. Nunc tincidunt lacus et condimentum vehicula. Nullam ac vulputate sem, ac cursus odio. Cras vitae fringilla felis. Quisque aliquet a ligula eget pellentesque. Proin sem mauris, dictum id fringilla rhoncus, sollicitudin at sapien. Vivamus vulputate rutrum interdum. Maecenas ac tempus dui, quis pellentesque lorem.',
+    title: 'How finding a Cursed Locket helped me with communication skills',
+    content: 'While diving of the coast of Alaska, I discovered what could only be described as a treasure trove.  Buried in a chest near a sandbar was a collection of jewelry which must have dated back hundreds of years!  I donated or sold most of the treasure, but one thing I kept for myself; a beautiful dark locket with a red gem inside.  I originally kept it as a piece of jewelry and memento to remind myself of the event & look fly, but that didn`t last long.  After only a few days, I heard voices coming from the locket, trying to control my mind and actions.  I used techniques I had learned from Liberty Mutual Insurance Group to manage the voices and form us into a team, which was super useful for group projects and other team-oriented tasks.',
     user: users[3],
     tag_list: 'accounting, finace, business'
   },
   {
-    title: 'Why I would coop at Liberty again',
-    content: 'In hac habitasse platea dictumst. Vivamus sit amet urna tempor, gravida diam condimentum, viverra dolor. Aliquam eget tellus in sem pellentesque ornare sit amet non diam. Nullam commodo arcu quis mi viverra vulputate. Phasellus in libero pharetra, mattis quam ac, ullamcorper neque. Donec ut pharetra dui, tincidunt sollicitudin neque. Phasellus ut elit a augue convallis rhoncus. Mauris eu sem dapibus, feugiat diam et, interdum nunc. Fusce quis ligula quam. Fusce interdum venenatis tincidunt.',
+    title: 'Sample Experience 1 (my first experience of the world)',
+    content: 'Darkness.  Lots of noise (muffled).  Cramped, confined.  Suddenly, light.',
     user: users[5],
+    tag_list: 'accounting, finace, business, birth'
+  },
+  {
+    title: 'Learning, Growing, and Exploring careers at Liberty',
+    content: 'Liberty Mutual offers the greatest Career Development plan I have ever been a part of. I was able to take several training courses that I felt would benefit and progress my future career development.',
+    user: users[2],
+    tag_list: 'accounting, finace, business'
+  },
+  {
+    title: 'blah blah blah here`s a sample summary',
+    content: 'As an intern here at Liberty Mutual, I found myself contributing every day. My team provided me with work and guidance to ensure that I was always progressing.',
+    user: users[3],
+    tag_list: 'accounting, finace, business'
+  },
+  {
+    title: '6 Easy tips for tipping in Tippecanoe County (IN)',
+    content: '<p> Indiana is a huge state, but Tippecanoe is special; if you decide to visit over the summer, here are 6 things to consider when handling your bill in restaurants:</p><p> 1. If you have a smaller meal, tip slightly larger.  a 50 cent tip is nice, but really not much different from a dollar to you, so go big or go home :)</p><p></p><p> 2. 15% is a solid, go to number.  Better service can get more, poorer service less, but 15 is a decent base.</p><p></p><p> 3. cash is preferred payment, due to high processing fees for credit cards.  keep this in mind, your servers will appreciate it!</p><p></p><p> 4. Reason Number 4 :)</p><p></p><p> 5. Talk to your wait-staff (if it`s not too busy).  Get to know them, learn their stories.  Then tip 20%.</p><p></p><p> 6. If you do get change, save your ones and tip with other bills.  This saves most of your ones for other purposes ;) </p>'
+
+    user: users[4],
     tag_list: 'it, software development, python'
   }
 ]
