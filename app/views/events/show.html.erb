@@ -51,6 +51,22 @@
 <% end %>
 <div class='col-md-10 col-md-offset-1'>
 <hr style='border-top: 1px solid lightgrey;'>
+<div>
+  <div class='col-md-1 col-md-offset-1'>
+    <%= render 'rsvps/form', event: @event %>
+  </div>
+  <div  class='col-md-7 col-md-offset-1'>
+  <% @event.rsvps.each_with_index do |rsvp, index| %>
+    <% if index == (@event.rsvps.size - 1) %>
+      <%= rsvp.user.first_name %> <%= rsvp.user.last_name %>
+    <% else %>
+      <%= rsvp.user.first_name %> <%= rsvp.user.last_name %>,
+    <% end %>
+  <% end %>
+  </div>
+</div>
+<div class='clear'></div>
+<hr style='border-top: 1px solid lightgrey;'>
 <h3>Ask questions or leave comments</h3>
 <%= render 'comments/form_for_events' %>
 <hr style='border-top: 1px solid lightgrey;'>

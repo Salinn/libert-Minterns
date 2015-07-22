@@ -1,0 +1,2 @@
+module RsvpStatusesHelper
+end

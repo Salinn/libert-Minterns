@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  
+  resources :rsvp_statuses
+  resources :rsvps
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    post :import, :controller => 'dashboard'
+  end
+  
   get 'tags/:tag', to: 'intern_summaries#index', as: :tag
   get 'winning_photos/:id/pick_winning_photo', to: 'winning_photos#pick_winning_photo', as: :pick_winning_photo
   

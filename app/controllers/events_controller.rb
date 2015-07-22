@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @comment = Comment.new
+    @rsvp = Rsvp.new
   end
   
   def show_event_photos
@@ -72,7 +73,7 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.includes(comments: [:user], rsvps: [:user]).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

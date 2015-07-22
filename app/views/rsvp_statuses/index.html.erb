@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rsvp Statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rsvp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rsvp_statuses.each do |rsvp_status| %>
+      <tr>
+        <td><%= rsvp_status.rsvp %></td>
+        <td><%= link_to 'Show', rsvp_status %></td>
+        <td><%= link_to 'Edit', edit_rsvp_status_path(rsvp_status) %></td>
+        <td><%= link_to 'Destroy', rsvp_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rsvp status', new_rsvp_status_path %>

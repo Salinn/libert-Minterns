@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702124219) do
+ActiveRecord::Schema.define(version: 20150722155457) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content"
@@ -179,6 +179,24 @@ ActiveRecord::Schema.define(version: 20150702124219) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "rsvp_statuses", force: :cascade do |t|
+    t.integer  "rsvp_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "rsvp_statuses", ["rsvp_id"], name: "index_rsvp_statuses_on_rsvp_id"
+
+  create_table "rsvps", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "rsvps", ["event_id"], name: "index_rsvps_on_event_id"
+  add_index "rsvps", ["user_id"], name: "index_rsvps_on_user_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
