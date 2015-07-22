@@ -11,7 +11,7 @@
   <hr>
   <% @intern_summaries.each do |intern_summary| %>
       <h3><%= intern_summary.title %></h3>
-      <p><%= intern_summary.content %></p>
+      <p><%= raw intern_summary.content %></p>
       <p>Written by: <%= intern_summary.user.first_name %> <%= intern_summary.user.last_name %></p>
 
       <p>Tags: <%= get_tag_links(intern_summary) %></p>
