@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   def show
     @comment = Comment.new
     @rsvp = Rsvp.new
+    @photo = Photo.new
   end
   
   def show_event_photos

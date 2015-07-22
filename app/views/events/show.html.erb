@@ -1,3 +1,5 @@
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <div class='col-md-2 col-md-offset-3'>
 <p>
   <strong>Name:</strong>
@@ -34,8 +36,14 @@
 <% if Date.today > @event.start_date %>
 
 <div class='col-md-10 col-md-offset-1'>
+  <hr style='border-top: 1px solid lightgrey;'>
+  <div align='center' class='col-md-12'>
+    <h3>Upload your own Photos</h3>
+    <%= render 'photos/event_form', event: @photo %>
+  </div>
+  <div class='clear'></div>
 <hr style='border-top: 1px solid lightgrey;'>
-<div>
+<div class='col-md-12'>
   <h3 style='text-align: center;'>Event Photos</h3>
   <% if @event.gallery.photos.any? %>
     <% @event.gallery.photos.each do |photo| %>
@@ -52,7 +60,7 @@
 <div class='col-md-10 col-md-offset-1'>
 <hr style='border-top: 1px solid lightgrey;'>
 <div>
-  <div class='col-md-1 col-md-offset-1'>
+  <div align='center' class='col-md-1 col-md-offset-1'>
     <%= render 'rsvps/form', event: @event %>
   </div>
   <div  class='col-md-7 col-md-offset-1'>
