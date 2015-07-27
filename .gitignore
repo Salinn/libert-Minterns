@@ -16,11 +16,8 @@
 !/log/.keep
 /tmp
 
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
-
 public/uploads/photo/*
 public/uploads/tmp/*
 public/uploads/*
 .idea/*
+/db/development.sqlite3
