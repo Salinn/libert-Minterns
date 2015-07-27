@@ -28,5 +28,6 @@ class StaticPagesController < ApplicationController
   def ask_a_question
     @faq_sections = FaqSection.all
     @faq = Faq.new
+    @faq.build_question
   end
 end
