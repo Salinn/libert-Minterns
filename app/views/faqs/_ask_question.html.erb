@@ -19,12 +19,12 @@
         <%= f.collection_select :faq_section_id, @faq_sections, :id, :name, :include_blank => true %>
       </div>
       <div class="field">
-        <%= f.fields_for :questions do |question| %>
-          <%= question.label :title %><br>
-          <%= question.text_field :title %><br>
-          <%= question.label :content %><br>
-          <%= question.text_area :content %>
-          <%= question.hidden_field :user_id, value: current_user.id %>
+        <%= f.form_for :question, @faq.question do |question_fields| %>
+          <%= question_fields.label :title %><br>
+          <%= question_fields.text_field :title %><br>
+          <%= question_fields.label :content %><br>
+          <%= question_fields.text_area :content %>
+          <%= question_fields.hidden_field :user_id, value: current_user.id %>
         <% end %> 
       </div>
       <div class="actions">

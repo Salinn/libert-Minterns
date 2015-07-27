@@ -13,6 +13,10 @@ class Faq < ActiveRecord::Base
     Rating.create!(faq_id: self.id)
   end
   
+  def create_rating_associaton
+    Rating.create!(faq_id: self.id)
+  end
+  
   def self.order_by_ratings
     
   end

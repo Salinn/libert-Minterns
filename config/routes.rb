@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :rsvp_statuses
   resources :rsvps
   namespace :admin do
+    resources :dashboard, :only => [:index] do
+      collection { post :import }
+    end
     get '', to: 'dashboard#index', as: '/'
-    post :import, :controller => 'dashboard'
   end
   
   get 'tags/:tag', to: 'intern_summaries#index', as: :tag
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   get 'photo_challenge_gallery/:photo_challenge_id' => 'photo_challenges#photo_challenge_gallery', as: :photo_challenge_gallery
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => 'registration' }, :path_names => { :'sign_up.html.erb' => 'register'}
-  resources :users, :only => [:index, :show, :edit, :update ]
+  resources :users, :only => [:index, :show, :edit, :update, :new, :create ]
   resources :users_admin, :controller => 'users'
 
   resources :intern_summaries

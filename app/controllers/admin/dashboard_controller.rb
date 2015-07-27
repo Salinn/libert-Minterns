@@ -3,4 +3,9 @@ class Admin::DashboardController < ApplicationController
   
   def index
   end
+  
+  def import
+    Admin::Dashboard.import(params[:file])
+    redirect_to '/admin', notice: "Products imported."
+  end
 end
