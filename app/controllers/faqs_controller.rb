@@ -16,7 +16,6 @@ class FaqsController < ApplicationController
   # GET /faqs/new
   def new
     @faq = Faq.new
-    @faq.question.build
   end
 
   # GET /faqs/1/edit
