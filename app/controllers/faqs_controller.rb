@@ -16,6 +16,7 @@ class FaqsController < ApplicationController
   # GET /faqs/new
   def new
     @faq = Faq.new
+    @faq.question.build
   end
 
   # GET /faqs/1/edit
@@ -29,7 +30,7 @@ class FaqsController < ApplicationController
 
     respond_to do |format|
       if @faq.save
-        format.html { redirect_to @faq, notice: 'Faq was successfully created.' }
+        format.html { redirect_to most_faqs_path, notice: 'Faq was successfully created.' }
         format.json { render :show, status: :created, location: @faq }
       else
         format.html { render :new }
