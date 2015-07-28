@@ -3,7 +3,8 @@ intern_summaries = [
   {
     title: 'My work in the unicorn dept.',
     content: "While rare, some interns may earn the right/privelege to work in Liberty Mutual's wold-class Unicorn department. Here, we work to catch, care for, and protect the remnants of the world Unicorn population (which has dwindled to an estimated 1,000 in the last hundred years or so). The best part of my day is stablework, I really love being close to the animals both on a physical level and on a networking level. I've had some great reviews written for me not only by my manager, but my favorite Unicorn, Fabio. He really played up my interpesonal skills, as well as my abilities in the Microsoft Office Suite. Can't say enough good things about this company and department.",
-    user: users[0]
+    user: users[0],
+    tag_list: 'accounting, finace, business'
   },
   {
     title: "Liberty's IT impact on me!",

@@ -4,9 +4,13 @@
 
   <h1>Listing Intern Summaries</h1>
   <h3>Tags used to help find articles</h3>
-  |
-  <% @tags.each do |tag| %>
-      <%= link_to tag.name, tag_path(tag.name) %> |
+
+  <% @tags.each_with_index do |tag, index| %>
+      <% if index == ( @tags.size - 1) %>
+        <%= link_to tag.name, tag_path(tag.name) %>
+      <% else %>
+          <%= link_to tag.name, tag_path(tag.name) %>,
+      <% end %>
   <% end %>
   <hr>
   <% @intern_summaries.each do |intern_summary| %>
