@@ -8,9 +8,14 @@
         <% photo_challenge.photos[0...5].each do |photo| %>
           <%= image_tag(photo.picture_url(:large)) %>
         <% end %>
-        <p><%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
+        <% if photo_challenge.winning_photo && photo_challenge.winning_photo.photo %>
+          <p><%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
+        <% else %>
+          <p><%= link_to "Come add your photos to #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
+        <% end %>
       <% else %>
         <h5>No images available</h5>
+        <p><%= link_to "Come add your photos to #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
       <% end %>
     </div>
   <% end %>
