@@ -7,8 +7,10 @@
         <div class='col-md-8 col-md-offset-2'>
           <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
             <h3>This weeks winning photo is...</h3>
-            <div class='col-md-10 col-md-offset-1'>
-              <a  href='<%= @photo_challenge.winning_photo.photo.picture_url %>' data-title='<%= @photo_challenge.winning_photo.photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= @photo_challenge.winning_photo.photo.picture_url %>" style='width:100%; max-width:500px; height: 100%; max-height: 500px;'/></a>
+            <div class='winning-square'>
+              <div class='winning'>
+                <a  href='<%= @photo_challenge.winning_photo.photo.picture_url %>' data-title='<%= @photo_challenge.winning_photo.photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= @photo_challenge.winning_photo.photo.picture_url %>"/></a>
+              </div>
             </div>
             <div class='clear'></div>
             <h3>Reason: <%= @photo_challenge.winning_photo.reason %></h3>
@@ -25,8 +27,10 @@
       <% if @photo_challenge.photos.any? %>
           <% @photo_challenge.photos.each do |photo| %>
               <% next if @photo_challenge.winning_photo && @photo_challenge.winning_photo.photo.id == photo.id %>
-              <div class='gallery_images' style='display: inline;'>
-                <a  href='<%= photo.picture_url %>' data-title='<%= photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= photo.picture_url %>" /></a>
+              <div class='square'>
+                <div class='gallery_images'>
+                  <a  href='<%= photo.picture_url %>' data-title='<%= photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= photo.picture_url %>" /></a>
+                </div>
               </div>
           <% end %>
       <% else %>

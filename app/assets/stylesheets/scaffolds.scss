@@ -89,8 +89,43 @@ div {
 }
 
 .gallery_images img{
-  padding-left: .5rem;
-  padding-bottom: .5rem;
-  max-width: 250px;
-  max-height: 250px;
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 240px;
+  max-height: 240px;
+  text-align: center;
+}
+
+.square {
+  position: relative;
+  background: #D0CDCD;
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+}
+
+.winning img{
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 490px;
+  max-height: 490px;
+  text-align: center;
+}
+.winning-square {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
