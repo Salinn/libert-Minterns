@@ -67,6 +67,17 @@ users = [
     remote_profile_picture_url: 'http://c3e308.medialib.glogster.com/media/36/362885eaf2a6616072ac3010d42d1983f8f17f70a86128b82d66ce68861d128f/tinytim.jpg',
     password: 'topsecret', 
     password_confirmation: 'topsecret'
+  },
+  {
+    first_name: 'Bender',
+    last_name: 'Rodrguez',
+    email: 'bender@bending.com',
+    phone_number: '1231231234',
+    major: majors[4],
+    college: colleges[0],
+    remote_profile_picture_url: 'http://images.forwallpaper.com/files/images/e/e14f/e14f9e8d/205514/bender-futurama-poker.jpg',
+    password: 'topsecret', 
+    password_confirmation: 'topsecret'
   }
 ]
 User.delete_all
