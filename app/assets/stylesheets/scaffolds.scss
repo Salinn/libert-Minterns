@@ -87,3 +87,10 @@ div {
 	float: none;
 	clear:both;
 }
+
+.gallery_images img{
+  padding-left: .5rem;
+  padding-bottom: .5rem;
+  max-width: 250px;
+  max-height: 250px;
+}
