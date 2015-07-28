@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
   end
   
   def most_faqs
-    @faqs = Faq.includes(:rating, question: [:answers]).joins(:rating).order('total').distinct.reverse.group_by(&:faq_section_id)
+    @faqs = Faq.includes(:rating, question: :answers).joins(:rating).order('total').distinct.reverse.group_by(&:faq_section_id)
     @faq_sections = FaqSection.joins(:faqs)
     @votes = VoteTracker.where(user: current_user)
   end
