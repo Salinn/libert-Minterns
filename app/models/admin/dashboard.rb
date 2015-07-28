@@ -7,23 +7,27 @@ class Admin::Dashboard
     user_organizations = []
     CSV.foreach(file.path, headers: true) do |row|
       user_hash = row.to_hash
-      
-      user = create_or_find_user(user_hash)
+
       major = create_or_find_major(user_hash)
       college = create_or_find_college(user_hash)
+      user = create_or_find_user(user_hash, major, college)
 
       user_ids.push(user.id)
     end # end CSV.foreach
   end
 
-  def self.create_or_find_user(user_hash)
+  def self.create_or_find_user(user_hash, major, college)
     first_name = user_hash["First Name"]
     last_name = user_hash["Last Name"]
-    email = user_hash["Email"]
-    
-    generated_password = Devise.friendly_token.first(8)
+    email = user_hash["Email"].downcase
 
-    User.find_or_create_by(first_name: first_name, last_name: last_name, email: email)
+    user_exists = User.find_by(email: email)
+    if user_exists
+      User.update(user_exists.id, first_name: first_name, last_name: last_name, email: email, major: major, college: college)
+    else
+      generated_password = Devise.friendly_token.first(8)
+      User.create!(first_name: first_name, last_name: last_name, email: email, major: major, college: college, password: generated_password)
+    end
   end
 
   def self.create_or_find_college(user_hash)
