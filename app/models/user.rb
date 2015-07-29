@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
          
   has_one :intern_summary
   
-  has_many :vote_trakers, dependent: :destroy
+  has_many :vote_trakers
   has_many :ratings, through: :vote_trakers
   
   belongs_to :major

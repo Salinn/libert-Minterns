@@ -3,32 +3,39 @@
       <h2 style='text-align: center;'><%= @photo_challenge.year.name %>'s <%= @photo_challenge.title %> <%= @photo_challenge.theme %></h2>
       <hr>
     </div>
-    <% if @photo_challenge.winning_photo  %>
+    <% if @photo_challenge.winning_photo && @photo_challenge.winning_photo.photo  %>
         <div class='col-md-8 col-md-offset-2'>
           <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
             <h3>This weeks winning photo is...</h3>
-            <div class='col-md-10 col-md-offset-1'>
-              <%= link_to image_tag(@photo_challenge.winning_photo.photo.picture_url, style: 'width:100%; max-width:500px; height: 100%; max-height: 500px;'), photo_path(@photo_challenge.winning_photo.photo.id) %>
+            <div class='winning-square'>
+              <div class='winning'>
+                <a  href='<%= @photo_challenge.winning_photo.photo.picture_url %>' data-title='<%= @photo_challenge.winning_photo.photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= @photo_challenge.winning_photo.photo.picture_url %>"/></a>
+              </div>
             </div>
             <div class='clear'></div>
             <h3>Reason: <%= @photo_challenge.winning_photo.reason %></h3>
-
             <div class='clear'></div>
           </div>
         </div>
     <% else %>
-        <%= render 'photos/submit_photo' %>
+      <div class='col-md-4 col-md-offset-4'>
+        <%= render 'photos/submit_photo_challenge' %>
+      </div>
     <% end %>
     <div class='clear'></div>
     <hr>
     <div class='col-md-10 col-md-offset-1'>
       <% if @photo_challenge.photos.any? %>
           <% @photo_challenge.photos.each do |photo| %>
-              <% next if @photo_challenge.winning_photo && @photo_challenge.winning_photo.photo.id == photo.id %>
-              <%= link_to image_tag(photo.picture_url, style: 'width:100%; max-width:250px; height: 100%; max-height: 250px; padding: 5px;'), photo_path(photo.id) %>
+              <% next if @photo_challenge.winning_photo && @photo_challenge.winning_photo.photo && @photo_challenge.winning_photo.photo.id == photo.id %>
+              <div class='square'>
+                <div class='gallery_images'>
+                  <a  href='<%= photo.picture_url %>' data-title='<%= photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= photo.picture_url %>" /></a>
+                </div>
+              </div>
           <% end %>
       <% else %>
-          <h5>No images available</h5>
+          <h5 style='text-align: center;'>No images available</h5>
       <% end %>
     </div>
 <% else %>

@@ -29,6 +29,9 @@ gem 'fog'
 gem "mini_magick"
 gem 'carrierwave'
 
+#Popup Pictures
+gem 'lightbox2-rails'
+
 #Allows tag creation and associatios to be created
 gem 'acts-as-taggable-on'
 

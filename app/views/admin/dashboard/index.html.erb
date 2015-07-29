@@ -1,6 +1,6 @@
 <h3>Update or Create new interns!</h3>
 <h5>Just upload the CSV File</h5>
-<%= form_tag admin_import_path, multipart: true do %>
+<%= form_tag import_admin_dashboard_index_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Import CSV" %>
 <% end %>
