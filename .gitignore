@@ -24,4 +24,4 @@ public/uploads/*
 
 RackMultipart*
 spring/*
-*spring*
+*spring*config/settings/development.local.yml
