@@ -4,7 +4,6 @@ class Admin::Dashboard
   def self.import(file)
     #http://richonrails.com/articles/importing-csv-files
     user_ids = []
-    user_organizations = []
     CSV.foreach(file.path, headers: true) do |row|
       user_hash = row.to_hash
 
@@ -14,6 +13,13 @@ class Admin::Dashboard
 
       user_ids.push(user.id)
     end # end CSV.foreach
+    User.with_role(:intern).each do |user|
+      if user_ids.include? user.id
+        user_ids.delete(user.id)
+      else
+        user.destroy
+      end
+    end
   end
 
   def self.create_or_find_user(user_hash, major, college)
@@ -26,7 +32,9 @@ class Admin::Dashboard
       User.update(user_exists.id, first_name: first_name, last_name: last_name, email: email, major: major, college: college)
     else
       generated_password = Devise.friendly_token.first(8)
-      User.create!(first_name: first_name, last_name: last_name, email: email, major: major, college: college, password: generated_password)
+      new_intern = User.create!(first_name: first_name, last_name: last_name, email: email, major: major, college: college, password: generated_password)
+      new_intern.add_role 'intern'
+      new_intern
     end
   end
 

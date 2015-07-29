@@ -21,3 +21,7 @@ public/uploads/tmp/*
 public/uploads/*
 .idea/*
 /db/development.sqlite3
+
+RackMultipart*
+spring/*
+*spring*
