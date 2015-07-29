@@ -1,4 +1,4 @@
-<h1>Listing Events</h1>
+<h1 class="col-md-offset-1">Listing Events</h1>
 
 <div id='events' class='col-md-10 col-md-offset-1'>
  <h2 id='month'>
@@ -14,28 +14,30 @@
         <li><%= link_to event.name, event %></li>
       <% end %>
     </ul>
-   <% end %>
+   <% end %> 
  <% end %>
 </div>
 <div class='clear'></div>
 <% @events_by_date.each do |date, events| %>
+<div class="row">
+<div class="col-md-offset-1 col-md-10">
 <h3><%= date %></h3>
-<table>
+<table class="table table-bordered table-condensed table-striped cf" id="event.tables">
   
-  <thead>
+  <thead class="cf">
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Cost</th>
+      <th class="col-md-3">Name</th>
+      <th class="col-md-5">Description</th>
+      <th class="col-md-2">Cost</th>
     </tr>
   </thead>
 
   <tbody>
     <% events.each do |event| %>
       <tr>
-        <td><%= event.name %></td>
-        <td><%= event.description %></td>
-        <td><%=  event.cost %></td>
+        <td data-title="Name"><%= event.name %></td>
+        <td data-title="Description"><%= event.description %></td>
+        <td data-title="Cost"><%= event.cost %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,4 +45,4 @@
   <hr>
 <% end %>
 
-<%= link_to 'New Event', new_event_path, data: { no_turbolink: true } %>
+<p class="text-center"><%= link_to 'New Event', new_event_path, data: { no_turbolink: true } %></p>
