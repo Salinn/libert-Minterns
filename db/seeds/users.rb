@@ -75,7 +75,7 @@ users = [
     phone_number: '1231231234',
     major: majors[4],
     college: colleges[0],
-    remote_profile_picture_url: 'http://images.forwallpaper.com/files/images/e/e14f/e14f9e8d/205514/bender-futurama-poker.jpg',
+    remote_profile_picture_url: 'http://img11.deviantart.net/3d18/i/2012/205/8/9/bender_the_offender_by_dxthegod-d58fraq.png',
     password: 'topsecret', 
     password_confirmation: 'topsecret'
   }
