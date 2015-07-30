@@ -1,5 +1,5 @@
 <div class='col-md-8 col-md-offset-2'>
-  <h1 align='center'>Last Weekly Photo Challenge</h1>
+  <h1 align='center'>Most Recent Photo Challenge</h1>
   <% if @photo_challenge %>
       <h3><%= @photo_challenge.title %></h3>
       <% if @photo_challenge.photos.any? %>
@@ -15,7 +15,7 @@
   <p><%= link_to 'See More Photo Challenges', photo_challenges_path %></p>
 </div>
 <div class='col-md-8 col-md-offset-2'>
-  <h1 align='center'>Last Intern Events</h1>
+  <h1 align='center'>Most Recent Intern Event</h1>
   <% if @event %>
       <h3><%= @event.name %></h3>
       <% if @event.gallery && @event.gallery.photos.any? %>
