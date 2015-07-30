@@ -1,24 +1,26 @@
-<div class='col-md-8 col-md-offset-2'>
-  <div align='center'>
-    <%= search_form_for @search do |f| %>
-        <div class="field">
-          <%= f.text_field :first_name_cont, placeholder: 'Search by First Name'  %>
-          <%= f.text_field :last_name_cont, placeholder: 'Search by Last Name'  %>
-          <%= f.search_field :major_name_cont, placeholder: 'Search by Major' %>
-          <%= f.search_field :college_name_cont, placeholder: 'Search by College' %>
-        </div>
-        <div class="actions" style='display: inline;'>
-          <%= f.submit "Search Interns" %>
-        </div>
-        <div style='display: inline;'>
-          <%= link_to 'Clear Search', users_path %>
-        </div>
-    <% end %>
+<div class='col-md-12' style='padding: 0;'>
+  <div class='col-md-8 col-md-offset-2'>
+    <div align='center'>
+      <%= search_form_for @search do |f| %>
+          <div class="field">
+            <%= f.text_field :first_name_cont, placeholder: 'Search by First Name'  %>
+            <%= f.text_field :last_name_cont, placeholder: 'Search by Last Name'  %>
+            <%= f.search_field :major_name_cont, placeholder: 'Search by Major' %>
+            <%= f.search_field :college_name_cont, placeholder: 'Search by College' %>
+          </div>
+          <div class="actions" style='display: inline;'>
+            <%= f.submit "Search Interns" %>
+          </div>
+          <div style='display: inline;'>
+            <%= link_to 'Clear Search', users_path %>
+          </div>
+      <% end %>
+    </div>
   </div>
 
   <br>
 
-  <div align='center'>
+  <div class='col-md-10 col-md-offset-1' >
     <table class="interns" style="border: 1px solid black;">
       <thead>
       <tr>
