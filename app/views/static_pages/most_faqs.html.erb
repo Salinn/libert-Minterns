@@ -4,49 +4,53 @@
   <div id='master-div'>
     <h1 style='text-align: center;'>FAQ Section</h1>
 
-    <div>
-      <ul class="nav nav-tabs faq-cat-tabs">
-        <li class="active">
-          <a href="#faq-cat-<%= @faq_sections.first.id %>" data-toggle="tab"><%= @faq_sections.first.name %></a>
-        </li>
-        <% @faq_sections.each do |faq_section| %>
-            <% next if faq_section.id == 1 %>
-            <li>
-              <a href="#faq-cat-<%= faq_section.id %>" data-toggle="tab"><%= faq_section.name %></a>
+    <% cache(@faq_sections) do %>
+        <div>
+          <ul class="nav nav-tabs faq-cat-tabs">
+            <li class="active">
+              <a href="#faq-cat-<%= @faq_sections.first.id %>" data-toggle="tab"><%= @faq_sections.first.name %></a>
             </li>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="tab-content faq-cat-content">
-      <% @faqs.each do |faq_section_id, faqs| %>
-          <div class="tab-pane<% if faq_section_id == 1 %> active in fade<% end %>" id="faq-cat-<%= faq_section_id %>">
-            <div class="panel-group" id="accordion-cat-<%= faq_section_id %>">
-              <% faqs.sort! { |a,b| b.rating.total <=> a.rating.total } %>
-              <% faqs.each do |faq| %>
-                  <div class="panel panel-default panel-faq">
-                    <div class="panel-heading">
-                      <a data-toggle="collapse" data-parent="#accordion-cat-<%= faq_section_id %>" href="#faq-cat-<%= faq_section_id %>-sub-<%= faq.id %>">
-                        <h4 class="panel-title">
-                          <%= faq.question.title %>
-                          <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
-                        </h4>
-                      </a>
-                    </div>
-                    <div id="faq-cat-<%= faq_section_id %>-sub-<%= faq.id %>" class="panel-collapse collapse">
-                      <%= render 'questions/faq_question', faq: faq %>
-                      <% faq.question.answers.each do |answer| %>
-                          <%= render 'answers/faq_answer',answer: answer, faq: faq %>
-                      <% end %>
-                    </div>
-                  </div>
-              <% end %>
-            </div>
-          </div>
-      <% end %>
-    </div>
+            <% @faq_sections.each do |faq_section| %>
+                <% next if faq_section.id == 1 %>
+                <li>
+                  <a href="#faq-cat-<%= faq_section.id %>" data-toggle="tab"><%= faq_section.name %></a>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <% cache(@faqs) do %>
+        <div class="tab-content faq-cat-content">
+          <% @faqs.each do |faq_section_id, faqs| %>
+              <div class="tab-pane<% if faq_section_id == 1 %> active in fade<% end %>" id="faq-cat-<%= faq_section_id %>">
+                <div class="panel-group" id="accordion-cat-<%= faq_section_id %>">
+                  <% faqs.sort! { |a,b| b.rating.total <=> a.rating.total } %>
+                  <% faqs.each do |faq| %>
+                      <div class="panel panel-default panel-faq">
+                        <div class="panel-heading">
+                          <a data-toggle="collapse" data-parent="#accordion-cat-<%= faq_section_id %>" href="#faq-cat-<%= faq_section_id %>-sub-<%= faq.id %>">
+                            <h4 class="panel-title">
+                              <%= faq.question.title %>
+                              <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                            </h4>
+                          </a>
+                        </div>
+                        <div id="faq-cat-<%= faq_section_id %>-sub-<%= faq.id %>" class="panel-collapse collapse">
+                          <%= render 'questions/faq_question', faq: faq %>
+                          <% faq.question.answers.each do |answer| %>
+                              <%= render 'answers/faq_answer',answer: answer, faq: faq %>
+                          <% end %>
+                        </div>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
   </div>
 </div>
+
 <script>
     $(document).ready(function() {
         $('.collapse').on('show.bs.collapse', function() {
