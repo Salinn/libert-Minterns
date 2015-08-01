@@ -74,7 +74,7 @@ class FaqsController < ApplicationController
   end
   
   def downvote
-    if @rating.total == 0 or @vote_tracker.vote_type == 'down'
+    if @vote_tracker.vote_type == 'down'
       redirect_to most_faqs_path, notice: 'Sorry, you have already down voted this question'
     else
       down_vote = (@rating.down_votes + 1)
