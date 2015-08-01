@@ -6,6 +6,7 @@ class PhotoChallengesController < ApplicationController
   def index
     @photo_challenges = PhotoChallenge.all.includes([:photos, :year, winning_photo: :photo]).reverse
     @grouped_challenges = @photo_challenges.group_by(&:year_id)
+    cache(@photo_challenges, @grouped_challenges)
   end
 
   # GET /photo_challenges/1

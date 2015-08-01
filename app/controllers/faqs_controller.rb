@@ -70,7 +70,7 @@ class FaqsController < ApplicationController
     else
       up_vote = (@rating.up_votes + 1)
     end
-    
+
     @rating.update(up_votes: up_vote, total: (up_vote - @rating.down_votes))
     @vote_tracker.update(vote_type: 'up')
     redirect_to most_faqs_path, notice: 'Thanks for voting'
