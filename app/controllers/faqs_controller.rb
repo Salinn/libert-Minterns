@@ -65,23 +65,29 @@ class FaqsController < ApplicationController
   def upvote
     if @vote_tracker.vote_type == 'up'
       redirect_to most_faqs_path, notice: 'Sorry, you have already up voted this question'
+    elsif @vote_tracker.vote_type == 'down'
+      up_vote = (@rating.up_votes + 2)
     else
       up_vote = (@rating.up_votes + 1)
-      @rating.update(up_votes: up_vote, total: (up_vote - @rating.down_votes))
-      @vote_tracker.update(vote_type: 'up')
-      redirect_to most_faqs_path, notice: 'Thanks for voting'
     end
+    
+    @rating.update(up_votes: up_vote, total: (up_vote - @rating.down_votes))
+    @vote_tracker.update(vote_type: 'up')
+    redirect_to most_faqs_path, notice: 'Thanks for voting'
   end
   
   def downvote
     if @vote_tracker.vote_type == 'down'
       redirect_to most_faqs_path, notice: 'Sorry, you have already down voted this question'
+    elsif @vote_tracker.vote_type == 'up'
+      down_votes = (@rating.down_votes + 2)
     else
-      down_vote = (@rating.down_votes + 1)
-      @rating.update(down_votes: down_vote, total: (@rating.up_votes - down_vote))
-      @vote_tracker.update(vote_type: 'down')
-      redirect_to most_faqs_path, notice: 'Thanks for voting'
+      down_votes = (@rating.down_votes + 1)
     end
+
+    @rating.update(down_votes: down_votes, total: (@rating.up_votes - down_votes))
+    @vote_tracker.update(vote_type: 'down')
+    redirect_to most_faqs_path, notice: 'Thanks for voting'
   end
 
   private
