@@ -26,3 +26,4 @@ RackMultipart*
 spring/*
 *spring*
 config/settings/development.local.yml
+public/assets/*

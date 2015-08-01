@@ -1,3 +1,4 @@
+<% cache(@photo_challenges) do %>
 <div>
   <div class='col-md-8 col-md-offset-1' style='float: left;'>
     <% if @photo_challenges.any? %>
@@ -5,9 +6,7 @@
             <div id="<%= photo_challenge.id %>">
               <h3><%= photo_challenge.title %> <%= photo_challenge.theme %></h3>
               <% if photo_challenge.photos.any? %>
-                  <% photo_selected = photo_challenge.photos[0...5] %>
-                  <% cache(photo_selected)%>
-                  <% photo_selected.photos[0...5].each do |photo| %>
+                  <% photo_challenge.photos[0...5].each do |photo| %>
                       <%= image_tag(photo.picture_url(:large)) %>
                   <% end %>
                   <% if photo_challenge.winning_photo && photo_challenge.winning_photo.photo %>
@@ -34,4 +33,4 @@
     <% end %>
   </div>
 </div>
-
+<% end %>

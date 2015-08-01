@@ -1,33 +1,37 @@
-<div class='col-md-8 col-md-offset-2'>
-  <h1 align='center'>Most Recent Photo Challenge</h1>
-  <% if @photo_challenge %>
-      <h3><%= @photo_challenge.title %></h3>
-      <% if @photo_challenge.photos.any? %>
-          <% @photo_challenge.photos[0...5].each do |photo| %>
-              <%= image_tag(photo.picture_url(:large), style: 'max-height: 200px; max-width: 250px;') %>
+<% cache(@photo_challenge) do %>
+    <div class='col-md-8 col-md-offset-2'>
+      <h1 align='center'>Most Recent Photo Challenge</h1>
+      <% if @photo_challenge %>
+          <h3><%= @photo_challenge.title %></h3>
+          <% if @photo_challenge.photos.any? %>
+              <% @photo_challenge.photos[0...5].each do |photo| %>
+                  <%= image_tag(photo.picture_url(:large), style: 'max-height: 200px; max-width: 250px;') %>
+              <% end %>
+          <% else %>
+              <h5>No images available</h5>
           <% end %>
       <% else %>
-          <h5>No images available</h5>
+          <h5>No photo challenges were found</h5>
       <% end %>
-  <% else %>
-      <h5>No photo challenges were found</h5>
-  <% end %>
-  <p><%= link_to 'See More Photo Challenges', photo_challenges_path %></p>
-</div>
-<div class='col-md-8 col-md-offset-2'>
-  <h1 align='center'>Most Recent Intern Event</h1>
-  <% if @event %>
-      <h3><%= @event.name %></h3>
-      <% if @event.gallery && @event.gallery.photos.any? %>
-          <% @event.gallery.photos[0...5].each do |photo| %>
-              <%= image_tag(photo.picture_url(:large), style: 'max-height: 205px; max-width: 250px;') %>
+      <p><%= link_to 'See More Photo Challenges', photo_challenges_path %></p>
+    </div>
+<% end %>
+<% cache(@event) do %>
+    <div class='col-md-8 col-md-offset-2'>
+      <h1 align='center'>Most Recent Intern Event</h1>
+      <% if @event %>
+          <h3><%= @event.name %></h3>
+          <% if @event.gallery && @event.gallery.photos.any? %>
+              <% @event.gallery.photos[0...5].each do |photo| %>
+                  <%= image_tag(photo.picture_url(:large), style: 'max-height: 205px; max-width: 250px;') %>
+              <% end %>
+          <% else %>
+              <h5>No images available</h5>
           <% end %>
       <% else %>
-          <h5>No images available</h5>
+          <h5>No events were found</h5>
       <% end %>
-  <% else %>
-      <h5>No events were found</h5>
-  <% end %>
 
-  <p><%= link_to 'See More Events', show_event_photos_path %></p>
-</div>
+      <p><%= link_to 'See More Events', show_event_photos_path %></p>
+    </div>
+<% end %>

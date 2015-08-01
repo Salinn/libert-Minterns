@@ -8,8 +8,6 @@ class StaticPagesController < ApplicationController
   def public_images
     @photo_challenge = PhotoChallenge.last
     @event = Event.last
-    cache(@photo_challenge)
-    cache(@event)
     #@office = ??? TODO figure out how we are doing this
   end
   
