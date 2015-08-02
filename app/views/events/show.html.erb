@@ -48,6 +48,7 @@
         <% if @event.gallery.photos.any? %>
             <% @event.gallery.photos.each do |photo| %>
                 <div style='width: 250px; height: 250px; display: inline;'>
+                  <a  href='<%= photo.picture_url %>' data-title='<%= photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= photo.picture_url %>" /></a>
                   <%= image_tag(photo.picture_url, style: 'max-width:250px; max-height: 250px; padding: 10px;') %>
                 </div>
             <% end %>
