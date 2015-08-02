@@ -6,7 +6,7 @@
 
   <% @tags.each_with_index do |tag, index| %>
       <% if index == ( @tags.size - 1) %>
-        <%= link_to tag.name, tag_path(tag.name) %>
+          <%= link_to tag.name, tag_path(tag.name) %>
       <% else %>
           <%= link_to tag.name, tag_path(tag.name) %>,
       <% end %>
@@ -15,8 +15,13 @@
   <% @intern_summaries.each do |intern_summary| %>
       <h3><%= intern_summary.title %></h3>
       <p><%= raw intern_summary.content %></p>
-      <p>Written by: <%= intern_summary.user.first_name %> <%= intern_summary.user.last_name %></p>
-
+      <% if intern_summary.user.first_name? &&  intern_summary.user.last_name? %>
+          <p>Written by: <%= "#{intern_summary.user.first_name}  #{intern_summary.user.last_name}" %></p>
+      <% elsif brother.first_name? %>
+          <p>Written by: <%= intern_summary.user.first_name %></p>
+      <% elsif brother.last_name? %>
+          <p>Written by: <%= intern_summary.user.last_name %></p>
+      <% end %>
       <p>Tags: <%= get_tag_links(intern_summary) %></p>
       <hr>
   <% end %>
