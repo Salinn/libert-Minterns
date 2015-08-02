@@ -1,5 +1,3 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 <div class='col-md-2 col-md-offset-3'>
   <p>
     <strong>Name:</strong>
@@ -7,7 +5,7 @@
   </p>
   <p>
     <strong>Start date:</strong>
-    <%= @event.start_date %>
+    <%= @event.start_date.strftime('%A, %b %d') %>
   </p>
   <p>
     <strong>Start time:</strong>
@@ -25,7 +23,7 @@
   </p>
   <p>
     <strong>End date:</strong>
-    <%= @event.end_date %>
+    <%= @event.end_date.strftime('%A, %b %d') %>
   </p>
   <p>
     <strong>End time:</strong>
@@ -47,9 +45,10 @@
         <h3 style='text-align: center;'>Event Photos</h3>
         <% if @event.gallery.photos.any? %>
             <% @event.gallery.photos.each do |photo| %>
-                <div style='width: 250px; height: 250px; display: inline;'>
-                  <a  href='<%= photo.picture_url %>' data-title='<%= photo.comment %>' data-lightbox="lightbox[<%= @photo_challenge.title %>]"><img src="<%= photo.picture_url %>" /></a>
-                  <%= image_tag(photo.picture_url, style: 'max-width:250px; max-height: 250px; padding: 10px;') %>
+                <div class='square'>
+                  <div class='gallery_images'>
+                    <a  href='<%= photo.picture_url %>' data-title='<%= photo.comment %>' data-lightbox="lightbox[<%= @event.name %>]"><img src="<%= photo.picture_url %>" /></a>
+                  </div>
                 </div>
             <% end %>
         <% else %>

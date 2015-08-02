@@ -25,7 +25,7 @@ class Ability
       can [:create], Rsvp
       can [:create], Photo
       can [:create, :update], Comment, :user_id => user.id
-      can [:create], Event
+      can [:index, :show, :create], Event
       can [:create], InternSummary
     end
 
