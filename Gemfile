@@ -55,6 +55,9 @@ gem 'jquery-timepicker-rails'
 #HTTP Server
 gem 'puma'
 
+#Text Field Editor
+gem 'ckeditor'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

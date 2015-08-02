@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require lightbox
+//= require ckeditor/init
 //= require chosen-jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs

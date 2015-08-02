@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.file_field :picture, placeholder: 'Image File' %>
-    <%= f.text_field :remote_picture_url, placeholder: 'Or input url of photo' %>
+    <%= f.cktext_area :remote_picture_url, placeholder: 'Or input url of photo' %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>

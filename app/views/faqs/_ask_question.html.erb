@@ -19,7 +19,7 @@
           <%= question_fields.label :title %><br>
           <%= question_fields.text_field :title %><br>
           <%= question_fields.label :content %><br>
-          <%= question_fields.text_area :content %>
+          <%= question_fields.cktext_area :content %>
           <%= question_fields.hidden_field :user_id, value: current_user.id %>
       <% end %>
     </div>
