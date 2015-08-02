@@ -1,5 +1,5 @@
 class Rating < ActiveRecord::Base 
-  belongs_to :faq
+  belongs_to :faq, touch: true
   
   has_many :vote_trakers, dependent: :destroy
   has_many :users, through: :vote_trakers
