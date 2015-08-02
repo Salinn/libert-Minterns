@@ -1,16 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= render 'static_pages/intern_page' %>
+<div class='col-md-8 col-md-offset-2'>
 
-<h1>Listing Intern Summaries</h1>
-<% @intern_summaries.each do |intern_summary| %>
-  <h3><%= intern_summary.title %></h3>
-  <p><%= raw intern_summary.content %></p>
-  <p>Written by: <%= intern_summary.user.first_name %> <%= intern_summary.user.last_name %></p>
-  
-  <p>Tags: <%= get_tag_links(intern_summary) %></p>
+  <h1>Listing Intern Summaries</h1>
+  <h3>Tags used to help find articles</h3>
+
+  <% @tags.each_with_index do |tag, index| %>
+      <% if index == ( @tags.size - 1) %>
+          <%= link_to tag.name, tag_path(tag.name) %>
+      <% else %>
+          <%= link_to tag.name, tag_path(tag.name) %>,
+      <% end %>
+  <% end %>
   <hr>
-<% end %>
+  <% @intern_summaries.each do |intern_summary| %>
+      <h3><%= intern_summary.title %></h3>
+      <p><%= raw intern_summary.content %></p>
+      <p>Written by: <%= intern_summary.user.first_name %> <%= intern_summary.user.last_name %></p>
 
-<br>
-
-<!-- Add a if statement to check if they have permissions to create a summary -->
-<%= link_to 'Back to Intern Summaries', summaries_path %>
+      <p>Tags: <%= get_tag_links(intern_summary) %></p>
+      <hr>
+  <% end %>
+  <%= will_paginate @intern_summaries %>
+</div>

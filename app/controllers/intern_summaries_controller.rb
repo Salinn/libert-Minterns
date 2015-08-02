@@ -6,9 +6,11 @@ class InternSummariesController < ApplicationController
   # GET /intern_summaries.json
   def index
     if params[:tag]
-      @intern_summaries = InternSummary.includes(:user).tagged_with(params[:tag])
+      @intern_summaries = InternSummary.includes(:user).tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
+      @tags = ActsAsTaggableOn::Tag.most_used
     else
       @intern_summaries = InternSummary.all
+      @tags = ActsAsTaggableOn::Tag.most_used
     end
   end
 

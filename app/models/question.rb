@@ -6,5 +6,5 @@ class Question < ActiveRecord::Base
 
   validates :title, length: {minimum: 4}
   validates :content, length: {minimum: 6}
-  validates :user_id, :faq_id, presence: true
+  validates :user_id, presence: true
 end
