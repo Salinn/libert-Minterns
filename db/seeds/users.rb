@@ -82,3 +82,10 @@ users = [
 ]
 User.delete_all
 User.create!(users)
+
+User.all.each do |user|
+  user.add_role 'intern'
+end
+
+User.find(2).add_role 'admin'
+User.find(3).add_role 'hr'

@@ -8,35 +8,25 @@ class Ability
     end
 
     #Everyone
-    can [:show_event_photos], Event
     can [:show], Gallery
     can [:create], Question
-    can [:upvote, :downvote], Answer
-    can [:create, :update], Rating
-    can [:create, :update], VoteTracker
     can [:index], InternSummary
-    can [:index, :photo_challenge_gallery], PhotoChallenge
+    can [:create, :update], Rating
+    can [:show_event_photos], Event
+    can [:upvote, :downvote], Answer
+    can [:update], User, :id => user.id
+    can [:create, :update], VoteTracker
     can [:create, :upvote, :downvote], Faq
-
-    can [:update], User do | current_user |
-      current_user.try(:user) == user || user.role?(:hr)
-    end
+    can [:index, :photo_challenge_gallery, :create], PhotoChallenge
 
     #Intern
     if user.has_role?(:intern)
-      can [:show, :read, :new, :create], Rsvp
-      can [:show, :read, :new, :create, :update], Photo do |photo|
-        photo.try(:user) == user || user.role?(:hr)
-      end
-      can [:show, :read, :new, :create, :update], Comment do |comment|
-        comment.try(:user) == user || user.role?(:hr)
-      end
-      can [:show, :read, :new, :create, :update], Event do |event|
-        event.try(:user) == user || user.role?(:hr)
-      end
-      can [:show, :read, :new, :create, :update], InternSummary do |summary|
-        summary.try(:user) == user || user.role?(:hr)
-      end
+      can [:index, :show], User
+      can [:create], Rsvp
+      can [:create], Photo
+      can [:create, :update], Comment, :user_id => user.id
+      can [:create], Event
+      can [:create], InternSummary
     end
 
     #HR
