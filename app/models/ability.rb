@@ -8,17 +8,17 @@ class Ability
     end
 
     #Everyone
-    can [:show, :read], Event
+    can [:show_event_photos], Event
     can [:show, :read], FaqSection
     can [:show, :read], Gallery
     can [:show, :read], User
-    can [:show, :read], PhotoChallenge
     can [:show, :read], Photo
     can [:show, :read, :new, :create], Question
     can [:show, :read, :upvote, :downvote], Answer
+    can [:show, :read, :new, :create, :update], Rating
     can [:show, :read, :new, :create, :update], VoteTracker
     can [:show, :read, :new, :create, :update], InternSummary
-    can [:show, :read, :new, :create, :update], Rating
+    can [:show, :read, :photo_challenge_gallery], PhotoChallenge
     can [:show, :read, :new, :create, :upvote, :downvote], Faq
 
     can [:update], User do | current_user |

@@ -1,4 +1,4 @@
-<% if @photo_challenge %>
+<% cache(@photo_challenge) do %>
     <div class='col-md-10 col-md-offset-1'>
       <h2 style='text-align: center;'><%= @photo_challenge.year.name %>'s <%= @photo_challenge.title %> <%= @photo_challenge.theme %></h2>
       <hr>
@@ -38,6 +38,4 @@
           <h5 style='text-align: center;'>No images available</h5>
       <% end %>
     </div>
-<% else %>
-    <h5>No photo challenges were found</h5>
 <% end %>
