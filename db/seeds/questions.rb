@@ -10,7 +10,7 @@ questions = [
   },
   {
     title: 'Question 2',
-    content: 'Why?',
+    content: 'Why?, because why not?',
     user: users[4],
     faq: faqs[1]
   },

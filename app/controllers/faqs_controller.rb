@@ -33,7 +33,7 @@ class FaqsController < ApplicationController
         format.html { redirect_to most_faqs_path, notice: 'Faq was successfully created.' }
         format.json { render :show, status: :created, location: @faq }
       else
-        format.html { render :new }
+        format.html { redirect_to ask_a_question_path, alert: @faq.errors }
         format.json { render json: @faq.errors, status: :unprocessable_entity }
       end
     end

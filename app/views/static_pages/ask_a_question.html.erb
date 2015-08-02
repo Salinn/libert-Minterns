@@ -4,35 +4,7 @@
     <div align='left'>
       <h1 style='text-align: center;'>Ask A Question</h1>
       <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
-        <%= form_for(@faq) do |f| %>
-            <% if @faq.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(@faq.errors.count, "error") %> prohibited this faq from being saved:</h2>
-                  <ul>
-                    <% @faq.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                  </ul>
-                </div>
-            <% end %>
-
-            <div class="field">
-              <%= f.label :faq_section_id %><br>
-              <%= f.collection_select :faq_section_id, @faq_sections, :id, :name, :include_blank => true %>
-            </div>
-            <div class="field">
-              <%= f.fields_for :question, @faq.question do |question_fields| %>
-                <%= question_fields.label :title %><br>
-                <%= question_fields.text_field :title %><br>
-                <%= question_fields.label :content %><br>
-                <%= question_fields.text_area :content %>
-                <%= question_fields.hidden_field :user_id, value: current_user.id %>
-              <% end %> 
-            </div>
-            <div class="actions">
-              <%= f.submit %>
-            </div>
-        <% end %>
+        <%= render 'faqs/ask_question' %>
       </div>
     </div>
   </div>

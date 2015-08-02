@@ -1,3 +1,3 @@
 class Year < ActiveRecord::Base
-  validates :name, length: { is: 6 }
+  validates :name, length: { is: 4 }
 end
