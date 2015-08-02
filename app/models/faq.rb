@@ -12,6 +12,7 @@ class Faq < ActiveRecord::Base
   after_save :create_rating_associaton
   
   def create_rating_associaton
-    Rating.create!(faq_id: self.id)
+    rating = Rating.create!
+    rating.update(faq_id: self.id)
   end
 end

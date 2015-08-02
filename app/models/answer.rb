@@ -10,7 +10,7 @@ class Answer < ActiveRecord::Base
   after_create :create_rating
 
   def create_rating
-    rating = Rating.create!()
+    rating = Rating.create!
     self.update(rating_id: rating.id)
   end
 end

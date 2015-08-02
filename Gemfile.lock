@@ -57,8 +57,6 @@ GEM
     bullet (4.14.7)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.9.0)
-    byebug (5.0.0)
-      columnize (= 0.9.0)
     cancancan (1.12.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -79,7 +77,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    columnize (0.9.0)
     compass (1.0.3)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.2)
@@ -369,7 +366,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 3.3.5)
   bullet
-  byebug
   cancancan
   carrierwave
   chosen-rails

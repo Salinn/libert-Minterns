@@ -8,20 +8,18 @@ class Ability
     end
 
     #Everyone
-    can [:show, :read], Answer
     can [:show, :read], Event
     can [:show, :read], FaqSection
     can [:show, :read], Gallery
     can [:show, :read], User
-    can [:show, :read], VoteTracker
     can [:show, :read], PhotoChallenge
     can [:show, :read], Photo
     can [:show, :read, :new, :create], Question
+    can [:show, :read, :upvote, :downvote], Answer
+    can [:show, :read, :new, :create, :update], VoteTracker
     can [:show, :read, :new, :create, :update], InternSummary
-
-    can [:show, :read, :new, :create, :update], Faq do |faq|
-      faq.try(:user) == user || user.role?(:hr)
-    end
+    can [:show, :read, :new, :create, :update], Rating
+    can [:show, :read, :new, :create, :upvote, :downvote], Faq
 
     can [:update], User do | current_user |
       current_user.try(:user) == user || user.role?(:hr)
