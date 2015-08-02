@@ -1,5 +1,6 @@
 class InternSummariesController < ApplicationController
   before_action :set_intern_summary, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /intern_summaries
   # GET /intern_summaries.json

@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
   before_action :set_answer_for_vote, only: [:upvote, :downvote]
+  load_and_authorize_resource
 
   # GET /answers
   # GET /answers.json

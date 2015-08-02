@@ -1,5 +1,6 @@
 class FaqSectionsController < ApplicationController
   before_action :set_faq_section, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /faq_sections
   # GET /faq_sections.json

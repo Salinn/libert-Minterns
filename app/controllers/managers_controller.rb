@@ -1,5 +1,6 @@
 class ManagersController < ApplicationController
   before_action :set_manager, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /managers
   # GET /managers.json

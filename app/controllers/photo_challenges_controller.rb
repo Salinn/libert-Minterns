@@ -1,5 +1,6 @@
 class PhotoChallengesController < ApplicationController
   before_action :set_photo_challenge, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /photo_challenges
   # GET /photo_challenges.json

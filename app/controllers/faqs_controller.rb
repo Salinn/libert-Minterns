@@ -1,6 +1,7 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
   before_action :set_faq_for_vote, only: [:upvote, :downvote]
+  load_and_authorize_resource
 
   # GET /faqs
   # GET /faqs.json

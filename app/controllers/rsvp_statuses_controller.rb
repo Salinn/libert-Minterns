@@ -1,5 +1,6 @@
 class RsvpStatusesController < ApplicationController
   before_action :set_rsvp_status, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /rsvp_statuses
   # GET /rsvp_statuses.json

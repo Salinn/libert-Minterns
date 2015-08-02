@@ -1,5 +1,6 @@
 class WinningPhotosController < ApplicationController
   before_action :set_winning_photo, only: [:show, :edit, :update, :destroy, :pick_winning_photo]
+  load_and_authorize_resource
 
   # GET /winning_photos
   # GET /winning_photos.json

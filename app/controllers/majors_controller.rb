@@ -1,5 +1,6 @@
 class MajorsController < ApplicationController
   before_action :set_major, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /majors
   # GET /majors.json
