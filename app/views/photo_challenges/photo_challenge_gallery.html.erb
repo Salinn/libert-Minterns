@@ -1,9 +1,9 @@
 <% cache(@photo_challenge) do %>
     <div class='col-md-10 col-md-offset-1'>
       <h2 style='text-align: center;'><%= @photo_challenge.year.name %>'s <%= @photo_challenge.title %> <%= @photo_challenge.theme %></h2>
-      <hr>
     </div>
     <% if @photo_challenge.winning_photo && @photo_challenge.winning_photo.photo  %>
+        <hr>
         <div class='col-md-8 col-md-offset-2'>
           <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
             <h3>This weeks winning photo is...</h3>
@@ -18,9 +18,12 @@
           </div>
         </div>
     <% else %>
-      <div class='col-md-4 col-md-offset-4'>
-        <%= render 'photos/submit_photo_challenge' %>
-      </div>
+        <% unless current_user.roles.empty? %>
+            <hr>
+            <div class='col-md-4 col-md-offset-4'>
+              <%= render 'photos/submit_photo_challenge' %>
+            </div>
+        <% end %>
     <% end %>
     <div class='clear'></div>
     <hr>
