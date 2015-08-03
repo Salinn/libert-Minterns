@@ -2,6 +2,7 @@ class Admin::DashboardController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    @photo_challenge = PhotoChallenge.new
   end
   
   def import

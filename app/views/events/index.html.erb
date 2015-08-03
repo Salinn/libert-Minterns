@@ -18,10 +18,14 @@
  <% end %>
 </div>
 <div class='clear'></div>
+<div class="col-md-10 col-md-offset-1">
+  <h3><%= link_to 'Create your own event', new_event_path, data: { no_turbolink: true } %></h3>
+</div>
+<div class="col-md-10 col-md-offset-1">
 <% @events_by_date.each do |date, events| %>
-<div class="row">
-<div class="col-md-offset-1 col-md-10">
-<h3><%= date %></h3>
+<div class="row" style='padding-top: 0;'>
+<div class="col-md-12">
+<h3><%= date.strftime('%B %d') %></h3>
 <table class="table table-bordered table-condensed table-striped cf" id="event.tables">
   
   <thead class="cf">
@@ -44,9 +48,6 @@
 </table>
 </div>
 </div>
-  <hr>
+  <hrstyle='margin: 0;'>
 <% end %>
-
-<p> </p>
-
-<p class="text-center"><%= link_to 'New Event', new_event_path, data: { no_turbolink: true } %></p>
+</div>
