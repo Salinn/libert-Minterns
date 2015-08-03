@@ -4,8 +4,8 @@
           <h2><%= pluralize(@faq.errors.count, "error") %> prohibited this faq from being saved:</h2>
           <ul>
             <% @faq.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
+          <li><%= message %></li>
+        <% end %>
           </ul>
         </div>
     <% end %>

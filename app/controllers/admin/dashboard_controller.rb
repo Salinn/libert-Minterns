@@ -3,6 +3,10 @@ class Admin::DashboardController < ApplicationController
   
   def index
     @photo_challenge = PhotoChallenge.new
+    @years = Year.all.reverse
+    unless WinningPhoto.last.photo_challenge_id
+      @winning_photo = WinningPhoto.last
+    end
   end
   
   def import

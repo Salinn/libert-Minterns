@@ -44,7 +44,7 @@ class Ability
       can [:show, :read, :new, :create, :update], PhotoChallenge
       can [:show, :read, :new, :create, :update], Rsvp
       can [:show, :read, :new, :create, :update], Question
-      can [:show, :read, :new, :create, :update], WinningPhoto
+      can :all, WinningPhoto
       can [:show, :read, :new, :create, :update], Year
     end
   end
