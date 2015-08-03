@@ -17,7 +17,7 @@
       <tr>
         <td><%= winning_photo.photo_challenge.title %></td>
         <td><%= winning_photo.reason %></td>
-        <td><%= image_tag(winning_photo.photo.picture_url(:large)) %></td>
+        <td><%= (winning_photo && winning_photo.photo) ? image_tag(winning_photo.photo.picture_url(:large)) : '' %></td>
         <td><%= link_to 'Show', winning_photo %></td>
         <td><%= link_to 'Edit', edit_winning_photo_path(winning_photo) %></td>
         <td><%= link_to 'Destroy', winning_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

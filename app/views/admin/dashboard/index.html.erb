@@ -1,7 +1,28 @@
-<h3>Update or Create new interns!</h3>
-<h5>Just upload the CSV File</h5>
-<%= form_tag import_admin_dashboard_index_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-<% end %>
+<div class="col-md-4 col-md-offset-1">
+    <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
+        <h3>Update or Create new interns!</h3>
+        <h5>Just upload the CSV File</h5>
+        <%= form_tag import_admin_dashboard_index_path, multipart: true do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag "Import CSV" %>
+        <% end %>
+    </div>
+</div>
+<div class="col-md-4 col-md-offset-1">
+    <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
+        <h3>Create new photo challenge!</h3>
+        <%= render 'photo_challenges/form' %>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <% if @winning_photo %>
+        <div class'col-md-10 col-md-offset-1'>
+            <div style='padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
+                <h3>Pick Winner from last weeks photo challenge!</h3>
+                <h6>(Find winning picture then type the why above it and click the picture to finalize)</h6>
+                <%= render 'winning_photos/form' %>
+            </div>
+        </div>
+    <% end %>
 </div>

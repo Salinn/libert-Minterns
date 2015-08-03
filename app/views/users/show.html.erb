@@ -20,6 +20,10 @@
           <%= link_to "Back to Users", users_path(@user) %> |
           <%= link_to "Edit Info", edit_user_path(@user) %>
         </div>
+    <% else%>
+        <div style="float: right;">
+          <%= link_to "Back to Users", users_path(@user) %>
+        </div>
     <% end %>
     <br>
   </div>

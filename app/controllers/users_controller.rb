@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   respond_to :html
 
   def index
-    @search = User.ransack(params[:q])
+    @search = User.with_role(:intern).ransack(params[:q])
     @users = @search.result.includes(:major, :college)
   end
   

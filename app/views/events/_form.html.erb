@@ -10,44 +10,36 @@
       </ul>
     </div>
   <% end %>
-
+  <div class='col-md-2 col-md-offset-3'>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: 'Name of event' %>
   </div>
   <div class="field">
+    <%= f.text_field :start_date, placeholder: 'Starts date of event' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :start_time, placeholder: 'Start time of event' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :cost, placeholder: 'Free' %>
+  </div>
+</div>
+<div class='col-md-2 col-md-offset-1'>
+  <div class="field">
+    <%= f.text_field :location, placeholder: 'Location of event' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :end_date, placeholder: 'End date of event' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :end_time, placeholder: 'End time of event' %>
+  </div>
+</div>
+<div class="col-md-8 col-md-offset-2 field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.cktext_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.text_field :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.text_field :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :start_time %><br>
-    <%= f.text_field :start_time %>
-  </div>
-  <div class="field">
-    <%= f.label :end_time %><br>
-    <%= f.text_field :end_time %>
-  </div>
-  <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
-  </div>
-  <div class="field">
-    <%= f.label :reoccur %><br>
-    <%= f.number_field :reoccur %>
-  </div>
-  <div class="actions">
+  <div class="col-md-12 actions">
     <%= f.submit %>
   </div>
 <% end %>

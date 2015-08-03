@@ -1,25 +1,29 @@
 <% @photos.each do |photo| %>
-  <%= form_for(@winning_photo) do |f| %>
-    <% if @winning_photo.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@winning_photo.errors.count, "error") %> prohibited this winning_photo from being saved:</h2>
-  
-        <ul>
-        <% @winning_photo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+  <div class='square'>
+    <div class='gallery_images'>
+    <%= form_for(@winning_photo) do |f| %>
+      <% if @winning_photo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@winning_photo.errors.count, "error") %> prohibited this winning_photo from being saved:</h2>
+    
+          <ul>
+          <% @winning_photo.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.hidden_field :photo_id, value: photo.id %>
+      </div>
+      <div class="field">
+        <%= f.label :reason %><br>
+        <%= f.text_area :reason %>
+      </div>
+      <div class="actions">
+        <%= image_submit_tag(photo.picture_url(:large)) %>
       </div>
     <% end %>
-    <div class="field">
-      <%= f.hidden_field :photo_id, value: photo.id %>
     </div>
-    <div class="field">
-      <%= f.label :reason %><br>
-      <%= f.text_area :reason %>
-    </div>
-    <div class="actions">
-      <%= image_submit_tag(photo.picture_url) %>
-    </div>
-  <% end %>
+  </div>
 <% end %>
