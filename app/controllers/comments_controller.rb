@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
+  respond_to :html, :json
+
   # GET /comments
   # GET /comments.json
   def index
@@ -41,15 +43,8 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    respond_to do |format|
-      if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
-      else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+    @comment.update(comment_params)
+    respond_with @comment
   end
 
   # DELETE /comments/1

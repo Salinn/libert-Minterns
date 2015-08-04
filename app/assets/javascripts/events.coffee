@@ -6,3 +6,7 @@ jQuery ->
   $('#event_end_date').datepicker(dateFormat: 'dd-mm-yy');
   $('#event_start_time').timepicker({ 'scrollDefault': 'now' });
   $('#event_end_time').timepicker({ 'scrollDefault': 'now' });
+
+
+jQuery ->
+  $('.best_in_place').best_in_place()

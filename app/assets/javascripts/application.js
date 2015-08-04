@@ -13,6 +13,7 @@
 //= require jquery
 //= require lightbox
 //= require ckeditor/init
+//= require best_in_place
 //= require chosen-jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs

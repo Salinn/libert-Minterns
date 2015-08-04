@@ -4,8 +4,9 @@ class Admin::DashboardController < ApplicationController
   def index
     @photo_challenge = PhotoChallenge.new
     @years = Year.all.reverse
-    unless WinningPhoto.last.photo_challenge_id
-      @winning_photo = WinningPhoto.last
+    unless WinningPhoto.last.photo
+      @winning_photo = WinningPhoto.first
+      @photos = @winning_photo.photo_challenge.photos
     end
   end
   
