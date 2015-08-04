@@ -1,5 +1,5 @@
 # To see a demo of this you can see find it [here](http://liberty-minterns.herokuapp.com/)
-### TO see an overview of this website you can go watch it [here](https://www.youtube.com/embed/ITbxbIgmI6w)
+### To see an overview of this website you can go watch it [here](https://www.youtube.com/embed/ITbxbIgmI6w)
 
 #### The basic idea is for a recruitment tool for current and potential interns.
 
