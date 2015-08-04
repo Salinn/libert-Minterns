@@ -82,11 +82,17 @@
   <hr style='border-top: 1px solid lightgrey;'>
   <% if @event.comments.any? %>
       <% @event.comments.each do |comment| %>
-          <h4>Title: <%= comment.title %></h4>
-          <p>Context: <%= comment.content %></p>
-          <p>User: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+          <% if comment.user == current_user %>
+              <h4>Title: <%= best_in_place comment, :title %> (You can click the title to edit it)</h4>
+              <p>Context: <%= best_in_place comment, :content, :as => :textarea %>(You can click the comment to edit it)</p>
+              <p>User: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+          <% else %>
+              <h4>Title: <%= comment.title %></h4>
+              <p>Context: <%= comment.content %></p>
+              <p>User: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+          <% end %>
+             <% end %>
+          <% else %>
+          <p>No questions or comments have been posted</p>
       <% end %>
-  <% else %>
-      <p>No questions or comments have been posted</p>
-  <% end %>
-</div>
+      </div>

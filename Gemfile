@@ -20,6 +20,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
+#Edit info in place
+gem 'best_in_place', '~> 3.0.1'
+
 #Security gems 
 gem 'cancancan'
 gem 'rolify'
