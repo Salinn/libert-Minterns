@@ -1,11 +1,34 @@
 header {
     top: 0;
+    position: absolute;
+    background-color: rgb(64,86,137);
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 body {
     font-family: Garamond;
     background-image: url(http://i.imgur.com/tJKMqUU.jpg);
     background: scroll;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+
+.footer, .push{
+    height: 150px;
+}
+
+footer {
+    background-COLOR: rgb(64,86,167);
+    color:  rgb(255,255,255);
+    text-align: center;
 }
 .navbar {
     margin-bottom: 0px;
@@ -31,17 +54,6 @@ body {
     padding: 0px;
 }
 
-header, footer {
-    position: absolute;
-    background-color: rgb(64,86,137);
-    color: #FFFFFF;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-}
-
-footer {
-    bottom:0;
 }
 
 .row {

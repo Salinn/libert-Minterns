@@ -19,3 +19,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "lightbox";
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 20px;
+} 
+
+.notice-success {
+    background-color: #57AE75;
+    border:1px solid #458B5D;
+    text-align: center;
+    Color: #FFFFFF;
+}
+.alert-fail {
+    background-color: #C60000;
+    border:1px solid #B20000;
+    text-align: center;
+    Color: #FFFFFF;
+}

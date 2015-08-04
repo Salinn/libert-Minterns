@@ -11,14 +11,20 @@
   <%= render 'layouts/header' %>
   <div class="row">
     <div class='clear' style="margin-top: 50px;"></div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+   <div class="container">
+    <% flash.each do |name, msg| %>
+        <% if name == 'alert'  %>
+            <%= content_tag :div, msg, class: "alert alert-fail" %>
+        <% else %>
+            <%= content_tag :div, msg, class: "alert notice-success" %>
+        <% end %>
+    <% end %>
+  </div>
     
     <%= yield %>
   </div>
   
-  <div id='body'>
-    <!-- <%= render 'layouts/footer' %> -->
-  </div>
+  
+ 
 </body>
 </html>
