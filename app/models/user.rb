@@ -30,10 +30,10 @@ class User < ActiveRecord::Base
                             provider:access_token.provider,
                             email: data["email"],
                             uid: access_token.uid ,
-                            password: Devise.friendly_token[0,20]#,
-                            # remote_profile_picture_url: data["image"]
+                            password: Devise.friendly_token[0,20],
+                            remote_profile_picture_url: data["image"]
                           )
       end
-   end
+    end
   end
 end

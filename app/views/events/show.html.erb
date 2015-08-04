@@ -83,8 +83,8 @@
   <% if @event.comments.any? %>
       <% @event.comments.each do |comment| %>
           <% if comment.user == current_user %>
-              <h4>Title: <%= best_in_place comment, :title %> (You can click the title to edit it)</h4>
-              <p>Context: <%= best_in_place comment, :content, :as => :textarea %>(You can click the comment to edit it)</p>
+              <h4>Title (editable): <%= best_in_place comment, :title %></h4>
+              <p>Context (editable): <%= best_in_place comment, :content, :as => :textarea %></p>
               <p>User: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
           <% else %>
               <h4>Title: <%= comment.title %></h4>
