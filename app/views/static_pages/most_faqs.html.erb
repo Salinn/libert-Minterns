@@ -3,8 +3,6 @@
   <!-- should move style into a class -->
   <div id='master-div'>
     <h1 style='text-align: center;'>FAQ Section</h1>
-
-    <% cache(@faq_sections) do %>
         <div>
           <ul class="nav nav-tabs faq-cat-tabs">
             <li class="active">
@@ -18,7 +16,6 @@
             <% end %>
           </ul>
         </div>
-    <% end %>
     <% cache(@faqs) do %>
         <div class="tab-content faq-cat-content">
           <% @faqs.each do |faq_section_id, faqs| %>
