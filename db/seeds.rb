@@ -1,7 +1,7 @@
 #Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
 #No Requirments
 load 'db/seeds/events.rb'
-load 'db/seeds/years.rb'
+#load 'db/seeds/years.rb'
 load 'db/seeds/majors.rb'
 load 'db/seeds/colleges.rb'
 load 'db/seeds/faq_sections.rb' 

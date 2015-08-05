@@ -7,7 +7,7 @@ class PhotoChallenge < ActiveRecord::Base
 
   validates :title, length: { minimum: 4}
   validates :title, length: { minimum: 6}
-  validates :year_id, presence: true
+  #validates :year_id, presence: true
   
   after_create :create_gallery
   after_create :create_winning_photo

@@ -82,7 +82,107 @@ photos = [
     comment: ""
   },
   {
-    gallery: galleries[9],
+    gallery: galleries[4],
+    remote_picture_url: 'http://i.imgur.com/SfpLADG.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[4],
+    remote_picture_url: 'http://i.imgur.com/I9QgoNZ.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[4],
+    remote_picture_url: 'http://i.imgur.com/4eIa6MS.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[4],
+    remote_picture_url: 'http://i.imgur.com/2Oepl34.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[4],
+    remote_picture_url: 'http://i.imgur.com/oz32OqA.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[5],
+    remote_picture_url: 'http://i.imgur.com/5OPJSC3.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[5],
+    remote_picture_url: 'http://i.imgur.com/bIMj75L.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[5],
+    remote_picture_url: 'http://i.imgur.com/X02KAu1.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[5],
+    remote_picture_url: 'http://i.imgur.com/HfABK0x.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[5],
+    remote_picture_url: 'http://i.imgur.com/TfthW6a.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[6]
+    remote_picture_url: 'http://i.imgur.com/mH6mtXZ.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[6]
+    remote_picture_url: 'http://i.imgur.com/ccl3yaO.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[6]
+    remote_picture_url: 'http://i.imgur.com/JF7sd3m.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[6]
+    remote_picture_url: 'http://i.imgur.com/GMk5sLW.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[6]
+    remote_picture_url: 'http://i.imgur.com/rmGEfWM.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[6]
+    remote_picture_url: 'http://i.imgur.com/vP37pLN.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[7]
+    remote_picture_url: 'http://i.imgur.com/6BCY5dx.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[7]
+    remote_picture_url: 'http://i.imgur.com/sRzyzal.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[7]
+    remote_picture_url: 'http://i.imgur.com/G7vIFco.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[7]
+    remote_picture_url: 'http://i.imgur.com/D6Qwyun.jpg',
+    comment: ""
+  },
+  {
+    gallery: galleries[12],
     photo_challenge: photo_challenges[4],
     remote_picture_url: 'http://i.imgur.com/TyhaSHA.jpg',
     comment: "This summer, Haley and I have gotten really close! We both work at the Liberty Lake, WA office, and we
@@ -93,7 +193,7 @@ photos = [
               mine is, I will miss seeing her in the office!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/smNs3tK.jpg',
       comment: "Cheyenne and I don't work at the same office. We're actually 2 hours away from each other.
@@ -104,7 +204,7 @@ photos = [
               students and then we had the chance to walk on the field!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/a7Dj1tm.jpg',
       comment: "Rachel and I are the only interns in the Marlton, NJ office in Commercial Underwriting. We took a trip
@@ -114,7 +214,7 @@ photos = [
               great trip and we were able to sight-see the statue of Liberty!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/pBjyQ24.jpg',
       comment: "Here's a shout out from the IT Interns in Portsmouth, NH. We took well over ten pictures, but this
@@ -122,14 +222,14 @@ photos = [
               summer. Oh, and that's a hospital in the background there if someone doesn't heed the 'Look both ways' sign!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/wxh6GNn.jpg',
       comment: "Commercial Insurance PMDP interns on Thompson Island for the Product outing! Great friends, great fun
               and a great view of Boston in the backdrop--what a day!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/8k2E4L0.jpg',
       comment: "Almost every Friday after work this summer, a group of interns pick a spot to socialize and grab some
@@ -138,7 +238,7 @@ photos = [
               everyone in this picture! Gives us something to look forward to after the exciting work week!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/rb15FDx.jpg',
       comment: "Product management is da bomb! We got to enjoy amazing food at the House of Blues and then walk across
@@ -146,7 +246,7 @@ photos = [
               Thank you, Liberty!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/JdJOC0x.png',
       comment: "My awesome cubicle-mate, Tyler, and I got to share our first oyster experience together after work on a
@@ -154,7 +254,7 @@ photos = [
               We can't wait to see what else is in stored for us in Boston!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/IUmrIbn.jpg',
       comment: "My fellow intern, Chelsey, and I remember when we first started at Liberty Mutual. We had so many
@@ -167,7 +267,7 @@ photos = [
               Now, not only are they our coworkers, but also our friends!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/N53o9Jq.jpg',
       comment: "Here's a picture from the Tuesday (July 14th) trip to IMEC to help package medical materials to be
@@ -176,7 +276,7 @@ photos = [
               Pictured from left: myself, Shannon Hurley, Nhu Ngo"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/FVGXq2d.jpg',
       comment: "Making friends and saving lives at Serve with Liberty on Tuesday, July 14! Yesterday we packed and
@@ -184,7 +284,7 @@ photos = [
                 we helped 107,500 individuals in just one day. Go Liberty!"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/MTDAXX6.jpg',
       comment: "On Monday July 13th, the Boston office interns were able to participate in Serve with Liberty's
@@ -195,7 +295,7 @@ photos = [
                 those in need! (Pictured from left to right: Myself, Lexie Foerschner, Aliki Kalpaxis)"
   },
   {
-      gallery: galleries[9],
+      gallery: galleries[12],
       photo_challenge: photo_challenges[4],
       remote_picture_url: 'http://i.imgur.com/BlIFf1m.jpg',
       comment: "On Thursday July 17th, a group of interns ventured out to the infamous Lawn on D! The walk is
@@ -205,7 +305,7 @@ photos = [
                 each others company. We highly reccomend this to all of our fellow interns!"
   },
   {
-      gallery: galleries[8],
+      gallery: galleries[11],
       photo_challenge: photo_challenges[3],
       remote_picture_url: 'http://i.imgur.com/EKN6smo.jpg',
       comment: "I am interning in the No Fault department of Personal Insurance at the Liberty Lake, Washington office.
@@ -219,7 +319,7 @@ photos = [
                 use after I graduate next June by being hired for a full time position at Liberty Mutual."
   },
   {
-      gallery: galleries[8],
+      gallery: galleries[11],
       photo_challenge: photo_challenges[3],
       remote_picture_url: 'http://i.imgur.com/CiNPLfa.jpg',
       comment: "I work for Mainframe-Hosting in Portsmouth, NH. My manager, John Cushing, and I have gotten to know
@@ -231,7 +331,7 @@ photos = [
                 is under construction right now, so we had to wear hardhats and safety glasses to get there."
   },
   {
-      gallery: galleries[8],
+      gallery: galleries[11],
       photo_challenge: photo_challenges[3],
       remote_picture_url: 'http://i.imgur.com/SZmsTQt.jpg',
       comment: "In Underwriting negotiation is key, especially with our agents. I was able to effectively negotiate with my underwriting manager and my mentor to take a picture with few props to keep the office atmosphere light.
@@ -242,7 +342,7 @@ photos = [
                 well-rounded internship experience."
   },
   {
-      gallery: galleries[8],
+      gallery: galleries[11],
       photo_challenge: photo_challenges[3],
       remote_picture_url: 'http://i.imgur.com/ZdZINHg.jpg',
       comment: "Iced coffee Fridays with our awesome manager, Andrew!
@@ -267,14 +367,14 @@ photos = [
                 Happy Friday, everyone!!!"
   },
   {
-      gallery: galleries[8],
+      gallery: galleries[11],
       photo_challenge: photo_challenges[3],
       remote_picture_url: 'http://i.imgur.com/lNMmzqQ.jpg',
       comment: "Thanks to technology I can intern in Dover while the rest of my team that I work with are spread
                 through Indy, Wisconsin, and Seattle! I almost feel like I am at this conference with my manager who works in Indy. "
   },
   {
-      gallery: galleries[8],
+      gallery: galleries[11],
       photo_challenge: photo_challenges[3],
       remote_picture_url: 'http://i.imgur.com/5ud30v5.jpg',
       comment: "Checking out the local scenary with the boss man #gymbuds
@@ -287,7 +387,7 @@ photos = [
                 it’s amazing what they can accomplish'' —Sam Walton"
   },
   {
-      gallery: galleries[7],
+      gallery: galleries[10],
       photo_challenge: photo_challenges[2],
       remote_picture_url: 'http://i.imgur.com/9PLEuzU.jpg',
       comment: "Every day I am responsible for updating the huddle board with our daily numbers for new business,
@@ -297,14 +397,14 @@ photos = [
                 prevention visits, and various meetings in the conference room."
   },
   {
-      gallery: galleries[7],
+      gallery: galleries[10],
       photo_challenge: photo_challenges[2],
       remote_picture_url: 'http://i.imgur.com/fwEdNn5.jpg',
       comment: "Been working on customizing my work station from my mechanical keyboard to my custom mouse pad to my
                 mug repping RIT. Also I just got a new desk this week, now I get to spend half the day standing!"
   },
   {
-      gallery: galleries[7],
+      gallery: galleries[10],
       photo_challenge: photo_challenges[2],
       remote_picture_url: 'http://i.imgur.com/BNuh1oo.jpg',
       comment: "This was waiting for me on my desk when I got into work three weeks ago. I have to say that Liberty
@@ -315,27 +415,27 @@ photos = [
                 Internal Communications internship."
   },
   {
-      gallery: galleries[7],
+      gallery: galleries[10],
       photo_challenge: photo_challenges[2],
       remote_picture_url: 'http://i.imgur.com/EMHsjg5.jpg',
       comment: "This is a picture of myself, and fellow PI Talent and Enterprise Services intern, Stephen Rondinone,
                 working at our collaborative intern desks! I think he needs another Ergo training though..."
   },
   {
-      gallery: galleries[7],
+      gallery: galleries[10],
       photo_challenge: photo_challenges[2],
       remote_picture_url: 'http://i.imgur.com/ckenzZE.jpg',
       comment: "This is a picture of me at my desk, displaying a PivotChart Excel Workbook that I have been working on for a few days!"
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/a8Dltha.jpg',
       comment: "I got to get out of the office today for lunch and enjoy the PNW weather with some co-workers.
                 Sunny and 97 degrees in Liberty Lake today! 4.35 mile hike later we had a blast. Not a bad way to start the weekend"
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/F2QYYPe.jpg',
       comment: "The city known for its brotherly love, independence, freedom, and liberty is right in our back yard.
@@ -345,14 +445,14 @@ photos = [
                 Ben Franklin, a signer of the Declaration of Independence. "
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/xXOSb4R.jpg',
       comment: "Enjoyed a cruise through Boston Harbor with a fellow intern to see this amazing sunset. Working in the
                 Boston office definitely offers opportunities to experience moments like this close by!"
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/3ADkgSG.jpg',
       comment: "I'm working in the Dover office this summer and have gone to Portsmouth every weekend so far.  I
@@ -360,7 +460,7 @@ photos = [
                 stores in Portsmouth that asks you to pin where you are from to show how diverse the visiting population of Portsmouth is!"
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/6gBD44B.jpg',
       comment: "I am working in the Portsmouth, NH office this summer in IT! I found a rowing club in Dover, NH with
@@ -368,7 +468,7 @@ photos = [
                 from the Cocheco River! "
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/w39maD1.jpg',
       comment: "This summer I am volunteering my free time to ZUMIX!, a nonprofit organization in Boston which aims
@@ -378,7 +478,7 @@ photos = [
                 'If I Ain't Got You' by Alicia Keys, as an opening act to their Jazz at the Firehouse Concert."
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/K4fcYEM.jpg',
       comment: "I will never forget the day I walked in Boston's largest Pride Parade to date, but getting to hold
@@ -389,7 +489,7 @@ photos = [
                 pleased to say I work at a company that equally supports and respects all members of society. "
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/9L7J8ii.jpg',
       comment: "I am working in the Boston, MA office and this weekend, I went kayaking on the Charles River with two
@@ -398,13 +498,13 @@ photos = [
                 else in the Boston office, this is an experience you don't want to miss."
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/OKq0osO.jpg',
       comment: "Went out exploring Portsmouth NH with a few other interns on Market Day, and guess what we found!"
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/oWmtYYm.jpg',
       comment: "This summer I am working in Boston with very creative, friendly and as you can see smiley team.
@@ -413,7 +513,7 @@ photos = [
                 send us a selfie from Great Wall of China? :)    "
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/KJ3b4fk.jpg',
       comment: "I am working in the Dover, NH office and was invited to march in the 2015 Boston Pride Parade
@@ -422,7 +522,7 @@ photos = [
                 neat too :p"
   },
   {
-      gallery: galleries[6],
+      gallery: galleries[9],
       photo_challenge: photo_challenges[1],
       remote_picture_url: 'http://i.imgur.com/DWfWq30.jpg',
       comment: "I am working in the Chicago office this summer. The whole city is buzzing with excitement,
@@ -432,43 +532,43 @@ photos = [
 
 
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/hHa0U7e.jpg',
       comment: "No matter where I go or what I do, I am always representing Northeastern University. While travelling abroad this past semester, I frequently wore my bright red Northeastern University Husky Ambassador (tour guide) jacket and I was stopped throughout Europe by Americans addressing my jacket and asking me about Northeastern. One day while helping a few lost American high school students find their destination, I met a girl who applied early decision to Northeastern and another prospective student and I was able to answer all of their admissions and general NU questions while on the streets of Florence, Italy!! My love for Northeastern travels with me wherever I go and I am proud to be a tour guide and a representative of my school. In this picture I am wearing my tour guide jacket in St. Peter’s Basilica in Vatican City!!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/0edZv2I.jpg',
       comment: "With Baylor's president Judge Starr right after running the Baylor Line Freshman year, and right before we took down top-ranked Kansas State! Sic'em Bears!!!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/6y0P1ql.jpg',
       comment: "At the University of Georgia, we are proud to be Bulldawgs. Nothing is better than being with your best friends calling the Dawgs on a Saturday between the hedges. I couldnt start work in my cubicle without my lucky bulldawg! GOOOOOOO DAWGS! 'Sic em! *Woof woof woof woof woof*"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/qR6Ilyy.png',
       comment: "My friends and I celebrating after Ferrum College's annual Color Run. The proceeds go to the American Cancer Soceity and help a great cause!  GO PANTHERS!!!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/bw8lspr.jpg',
       comment: "Best times at CU hands down were the Basketball games. Winning the Pac 12 Championship freshmen year, knocking off #9 ranked Kansas at home when they had Andrew Wiggins and later doing the same thing to Oregon at #11. Going to miss the C-UNIT, always protect home court. SKO' BUFFS!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/JT3NGpJ.jpg',
       comment: "Showing off my RIT Tiger pride as a Peer Leader for Quest for Success, an educational orientation program for incoming freshmen."
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/8mGAkjZ.jpg',
       comment: "Driving all the way from Lowell, MA to Atlanta, GA in a van with the UMass Lowell Swim Team to attend Swim Club Nationals at Georgia Tech for the first time in history!
@@ -476,67 +576,67 @@ photos = [
 Definitely a highlight of my college career, something I will never forget. We were the underdogs, but we came in fierce and we all beat our best times. And I'm pretty sure I lost my voice cheering my teammates on the whole weekend!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/AKIn8T5.jpg',
       comment: "This picture is from my last race of the 2015 rowing season at the Dad Vail Regatta in Philadelphia, PA. For the first time in Bryant Rowing's 5 year club sport program, our boat finished with a faster time than a Division 1 team. I am the coxswain (in the front of the boat) and could not have this success without the dedication of the four ladies rowing. We train hard all year round on and off the water and are proud to be Bryant Bulldogs!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/aujqMgO.jpg',
       comment: "Standing in front of Temple's Iconic Bell Tower with Hooter the Owl! Go Owls!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/MFAFxP4.jpg',
       comment: "Raise the roof! Texas A&M University-Commerce wins at AT&T's Cowboys Stadium 55-20 versus Kingsville!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/ZQMSESq.jpg',
       comment: "This is what my Saturdays look like in the fall. If you can't tell already .. I'm a huge Penn State fan."
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/n9EiTx8.jpg',
       comment: "A little Throwback Thurday to my first football game and first O-H-I-O picture as a student at The Ohio State University. Two seasons later, we became Undispted National Champs!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/D7hVVLv.jpg',
       comment: "Showing off that Wildcat pride with our mascot Gnarlz at the UNH football game! Go WIldcats!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/k8V16jO.jpg',
       comment: "Storming the field after the best football game of my BC career-- as an unranked football team, we beat the No. 9 team, USC! It was also our Welles Crowther Red Bandanna game, in honor of a BC alum who we lost on 9/11. Definitely an all-around emotional game, and one that made us proud to be Eagles! (I am front left.)"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/DnwPaTK.jpg',
       comment: "I love showing off my school spirit at Southern New Hampshire University! This was taken at our men's basketball  breast cancer awareness game- Go Penmen!!!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/4kETbXu.jpg',
       comment: "Hanging out with Temple University's live mascot Stella the owl at the football team's opening game!"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/ps7EfDa.jpg',
       comment: "Who says Syracuse, NY is ugly?! I love my school. @LeMoyneCollege"
   },
   {
-      gallery: galleries[5],
+      gallery: galleries[8],
       photo_challenge: photo_challenges[0],
       remote_picture_url: 'http://i.imgur.com/wYqUBk0.jpg',
       comment: "Rocking the RIT Student Government Orange Blazer for the Freshmen Convocation Speeches"
