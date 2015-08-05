@@ -9,6 +9,7 @@ load 'db/seeds/departments.rb'
 #Order matters
 load 'db/seeds/users.rb' #Depends on colleges and majors
 load 'db/seeds/events.rb' #Depends on users
+load 'db/seeds/rsvps.rb' #Depends on Users and Events
 load 'db/seeds/faqs.rb' #Depends on faq_sections
 load 'db/seeds/questions.rb' #Depends fa and user
 load 'db/seeds/answers.rb' #Depends on user and question
