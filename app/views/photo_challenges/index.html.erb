@@ -1,4 +1,4 @@
-<% cache(@photo_challenges) do %>
+
     <div>
       <div class='col-md-2 col-md-offset-1' style='float: right; padding:1.5rem;box-shadow:0 1px 2px #aaa;background:white; margin:0 1rem 1rem; border-radius:3px;'>
         <% @grouped_challenges.each do |year, photo_challenges| %>
@@ -17,10 +17,15 @@
                       <% photo_challenge.photos[0...5].each do |photo| %>
                           <%= image_tag(photo.picture_url(:large)) %>
                       <% end %>
-                      <% if (photo_challenge.winning_photo && photo_challenge.winning_photo.photo) || (current_user == nil || current_user.roles.empty?) %>
+                      <% if (photo_challenge.winning_photo && photo_challenge.winning_photo.photo) %>
                           <p><%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
                       <% else %>
-                          <p><%= link_to "Come add your photos to #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
+                          <% if user_signed_in? && current_user.roles.empty? %>
+                              <p><%= link_to "Come add your photos to #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
+                              <p><%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
+                              <% else %>
+                              <p><%= link_to "View all photos associated with #{photo_challenge.title}", photo_challenge_gallery_path(photo_challenge.id) %></p>
+                              <% end %>
                       <% end %>
                   <% else %>
                       <h5>No images available</h5>
@@ -33,4 +38,3 @@
         <% end %>
       </div>
     </div>
-<% end %>

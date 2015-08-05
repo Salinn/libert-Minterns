@@ -18,7 +18,7 @@
           </div>
         </div>
     <% else %>
-        <% unless current_user.roles.empty? %>
+        <% if user_signed_in? && current_user.roles.empty? %>
             <hr>
             <div class='col-md-8 col-md-offset-2'>
               <%= render 'photos/submit_photo_challenge' %>
