@@ -25,6 +25,12 @@ photo_challenges = [
     theme: 'POST A GROUP PHOTO WITH YOUR FELLOW INTERNS!',
     year: years[1]
   }
+  ,
+  {
+    title: 'Week 6',
+    theme: 'HOW DO YOU GIVE BACK TO THE COMMUNITY?',
+    year: years[1]
+  }
 ]
 PhotoChallenge.delete_all
 PhotoChallenge.create!(photo_challenges)

@@ -39,7 +39,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        Rsvp.create!(user: (current_user || User.find()), event: @event)
+        Rsvp.create!(user: (current_user), event: @event)
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
