@@ -24,11 +24,10 @@ photo_challenges = [
     title: 'Week 5',
     theme: 'POST A GROUP PHOTO WITH YOUR FELLOW INTERNS!',
     year: years[1]
-  }
-  ,
+  },
   {
     title: 'Week 6',
-    theme: 'HOW DO YOU GIVE BACK TO THE COMMUNITY?',
+    theme: 'POST A GROUP PHOTO WITH YOUR FELLOW INTERNS!',
     year: years[1]
   }
 ]
