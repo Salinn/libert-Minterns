@@ -132,52 +132,52 @@ photos = [
     comment: ""
   },
   {
-    gallery: galleries[6]
+    gallery: galleries[6],
     remote_picture_url: 'http://i.imgur.com/mH6mtXZ.jpg',
     comment: ""
   },
   {
-    gallery: galleries[6]
+    gallery: galleries[6],
     remote_picture_url: 'http://i.imgur.com/ccl3yaO.jpg',
     comment: ""
   },
   {
-    gallery: galleries[6]
+    gallery: galleries[6],
     remote_picture_url: 'http://i.imgur.com/JF7sd3m.jpg',
     comment: ""
   },
   {
-    gallery: galleries[6]
+    gallery: galleries[6],
     remote_picture_url: 'http://i.imgur.com/GMk5sLW.jpg',
     comment: ""
   },
   {
-    gallery: galleries[6]
+    gallery: galleries[6],
     remote_picture_url: 'http://i.imgur.com/rmGEfWM.jpg',
     comment: ""
   },
   {
-    gallery: galleries[6]
+    gallery: galleries[6],
     remote_picture_url: 'http://i.imgur.com/vP37pLN.jpg',
     comment: ""
   },
   {
-    gallery: galleries[7]
+    gallery: galleries[7],
     remote_picture_url: 'http://i.imgur.com/6BCY5dx.jpg',
     comment: ""
   },
   {
-    gallery: galleries[7]
+    gallery: galleries[7],
     remote_picture_url: 'http://i.imgur.com/sRzyzal.jpg',
     comment: ""
   },
   {
-    gallery: galleries[7]
+    gallery: galleries[7],
     remote_picture_url: 'http://i.imgur.com/G7vIFco.jpg',
     comment: ""
   },
   {
-    gallery: galleries[7]
+    gallery: galleries[7],
     remote_picture_url: 'http://i.imgur.com/D6Qwyun.jpg',
     comment: ""
   },
