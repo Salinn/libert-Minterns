@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end 
 
   def public_images
-    @photo_challenge = PhotoChallenge.last
+    @photo_challenge = PhotoChallenge.offset(1).last
     @event = Event.last
     #@office = ??? TODO figure out how we are doing this
   end
