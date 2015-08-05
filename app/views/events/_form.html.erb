@@ -12,32 +12,32 @@
   <% end %>
   <div class='col-md-2 col-md-offset-3'>
   <div class="field">
-    <%= f.text_field :name, placeholder: 'Name of event' %>
+    <%= f.text_field :name,tabindex: 1, placeholder: 'Name of event' %>
   </div>
   <div class="field">
-    <%= f.text_field :start_date, placeholder: 'Starts date of event' %>
+    <%= f.text_field :start_date,tabindex: 3, placeholder: 'Starts date of event' %>
   </div>
   <div class="field">
-    <%= f.text_field :start_time, placeholder: 'Start time of event' %>
+    <%= f.text_field :start_time,tabindex: 5, placeholder: 'Start time of event' %>
   </div>
   <div class="field">
-    <%= f.text_field :cost, placeholder: 'Free' %>
+    <%= f.text_field :cost,tabindex: 7,  placeholder: 'Free' %>
   </div>
 </div>
 <div class='col-md-2 col-md-offset-1'>
   <div class="field">
-    <%= f.text_field :location, placeholder: 'Location of event' %>
+    <%= f.text_field :location,tabindex: 2,  placeholder: 'Location of event' %>
   </div>
   <div class="field">
-    <%= f.text_field :end_date, placeholder: 'End date of event' %>
+    <%= f.text_field :end_date,tabindex: 4,  placeholder: 'End date of event' %>
   </div>
   <div class="field">
-    <%= f.text_field :end_time, placeholder: 'End time of event' %>
+    <%= f.text_field :end_time,tabindex: 6,  placeholder: 'End time of event' %>
   </div>
 </div>
 <div class="col-md-8 col-md-offset-2 field">
     <%= f.label :description %><br>
-    <%= f.cktext_area :description %>
+    <%= f.cktext_area :description, tabindex: 8  %>
   </div>
   <div class="col-md-12 actions">
     <%= f.submit %>

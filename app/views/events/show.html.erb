@@ -1,3 +1,4 @@
+<br>
 <div class='col-md-2 col-md-offset-3'>
   <p>
     <strong>Name:</strong>
@@ -29,6 +30,18 @@
     <strong>End time:</strong>
     <%= @event.end_time.strftime('%I:%M %p') %>
   </p>
+  <p>
+    <strong>Creater:</strong>
+    <!-- TODO: This needs to be added to the event itself-->
+    <%= @event.rsvps.first.user.first_name %> <%= @event.rsvps.first.user.last_name %>
+  </p>
+</div>
+<div class='col-md-6 col-md-offset-3'>
+  <strong>Description:</strong>
+  <%= raw @event.description %>
+</div>
+<div class="col-md-12" align="center" style="padding-bottom: 10px">
+  <%= link_to 'Back To Events Page', events_path %>
 </div>
 
 <% if Date.today > @event.start_date %>

@@ -40,7 +40,7 @@
     <% events.each do |event| %>
       <tr>
         <td data-title="Name"><%= event.name %></td>
-        <td data-title="Description"><%= event.description %></td>
+        <td data-title="Description"><%= raw event.description %></td>
         <td data-title="Cost"><%= event.cost %></td>
       </tr>
     <% end %>
@@ -48,6 +48,6 @@
 </table>
 </div>
 </div>
-  <hrstyle='margin: 0;'>
+  <hr style='margin: 0;'>
 <% end %>
 </div>
