@@ -17,7 +17,7 @@ class Admin::Dashboard
       if user_ids.include? user.id
         user_ids.delete(user.id)
       else
-        user.destroy
+        user.remove_role 'intern'
       end
     end
   end
